@@ -649,6 +649,11 @@
     .cta{break-inside:auto;}
     .cta h2,.cta .book-tt,.cta .book-pts,.cta .qr-note,.cta .qrs,
     .cta .emails,.cta .brandline{break-inside:avoid;}
+    /* 标题不许被留在页脚（下文跑到下一页）—— 标题与正文必须同页 */
+    h2,h3,h4,.subh,.sec-kicker,.lead,.way .head,.phase .ph-h,.paid-banner,.corepos,
+    .promo .pt,.gma .g-h,.live .lv-lab{break-after:avoid;}
+    .sec-kicker,.subh{break-inside:avoid;}
+    p,li,td,th{orphans:2; widows:2;}
     .cmp-scroll{overflow:visible;} table.cmp{min-width:0;}
     .cta{margin-top:24px;}
     a{color:inherit; text-decoration:none;}
