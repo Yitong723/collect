@@ -418,7 +418,11 @@
   .key{color:var(--accent-deep); font-weight:700;}
   /* 图片 figure */
   .figimg{margin-top:22px;}
-  .figimg img{width:100%; height:auto; display:block; border-radius:16px; box-shadow:var(--shadow-lift);}
+  /* 配图限高：太高的整版大图在 PDF 里放不进当页残余空间，会被整块顶到下一页、
+     上一页底部留下大片空白。限高后按比例缩小并居中，网页与 PDF 保持一致。 */
+  .figimg img{width:auto; max-width:100%; height:auto; max-height:380px;
+    display:block; margin-left:auto; margin-right:auto;
+    border-radius:16px; box-shadow:var(--shadow-lift);}
   .figimg figcaption{margin-top:9px; text-align:center; font-size:12.5px; color:var(--muted);}
   /* 半幅图：宽度减半、居中（用于不需要占满整行的配图）*/
   .figimg.half{width:50%; margin-left:auto; margin-right:auto;}
@@ -634,10 +638,17 @@
     .section{padding:20px 0 6px;}
     .cover{padding:10px 0 24px;}
     .way{overflow:visible;}
-    .way .head,.way .row,.star,.gain,.after-grid .c,.flow .stage,.why .v,.mini2 .m,.faq .q,.cta,
+    /* 只让"小块"整块不拆页；大块（CTA、整段 section）允许跨页，
+       否则整块被顶到下一页，上一页底部就留下大片空白 */
+    .way .head,.way .row,.star,.gain,.after-grid .c,.flow .stage,.why .v,.mini2 .m,.faq .q,
     .databand .stat,.ladder .tier,.diff .d,.punch,.phase,.live,
     .corepos,.kv .item,.spotlight .s,.proc .step,.promo,
     .cta .offer,.cta .qr-card,.adv .ad,.invite,.figimg{break-inside:avoid;}
+    /* CTA 很高（接近一整页），整块不拆就必然在前一页留大段空白 —— 允许它跨页，
+       只保证内部的小卡片不被切断 */
+    .cta{break-inside:auto;}
+    .cta h2,.cta .book-tt,.cta .book-pts,.cta .qr-note,.cta .qrs,
+    .cta .emails,.cta .brandline{break-inside:avoid;}
     .cmp-scroll{overflow:visible;} table.cmp{min-width:0;}
     .cta{margin-top:24px;}
     a{color:inherit; text-decoration:none;}
