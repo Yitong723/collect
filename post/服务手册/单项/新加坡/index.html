@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="zh-CN" trancy-version="7.8.7"><plasmo-csui></plasmo-csui><head></head><body class=""><plasmo-csui></plasmo-csui><plasmo-csui></plasmo-csui><plasmo-csui></plasmo-csui><plasmo-csui></plasmo-csui><plasmo-csui></plasmo-csui>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>展会服务手册 · 东南亚出海测试市场</title>
+
+<!--
+╔══════════════════════════════════════════════════════════════════════╗
+║  展会服务手册（招商版）· 可打印 / 导出 PDF                              ║
+║  改字方法：直接在下方正文里改文字即可，CSS 在 <style> 内一般不用动。     ║
+║  想导出 PDF：浏览器打开本页 → Ctrl/Cmd+P → 目标选"另存为 PDF" →         ║
+║             勾选"背景图形" → 纸张 A4 纵向。                              ║
+║                                                                        ║
+║  ★ 待填清单（搜索 TODO 可逐个跳到）：                                    ║
+║    1. 公司名 / Logo                  —— 搜 TODO-BRAND                    ║
+║    2. 具体展会名称、城市、时间        —— 搜 TODO-FAIR                     ║
+║    3. 各项价格 / 价格区间             —— 搜 TODO-PRICE                    ║
+║    4. 服务费率 / 价格区间             —— 搜 TODO-PRICE                    ║
+║    5. 联系方式（微信 / 电话 / 邮箱）  —— 搜 TODO-CONTACT                  ║
+║    6. 问卷题目样例（如需放出）        —— 搜 TODO-SURVEY                   ║
+╚══════════════════════════════════════════════════════════════════════╝
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&amp;family=Noto+Serif+SC:wght@600;700;900&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#f3ebdd; --bg2:#efe4d2; --paper:#fffdf8; --ink:#221c14; --ink-soft:#4a4034;
+    --muted:#8c7f6c; --rule:#e2d6c0; --line:#d8c9ad;
+    --accent:#bd3c1e; --accent-deep:#992c12; --accent-soft:#fbe6da;
+    --keep:#4a6b3f; --keep-soft:#e6efe0; --keep-line:#bcd0ad;
+    --gold:#a8772e; --gold-soft:#f4e9d3;
+    --shadow:0 1px 2px rgba(70,45,20,.05), 0 12px 28px -14px rgba(90,55,25,.22);
+    --shadow-lift:0 2px 6px rgba(70,45,20,.07), 0 30px 56px -22px rgba(120,65,25,.32);
+    --serif:"Noto Serif SC", serif;
+    --sans:"Noto Sans SC", -apple-system, "PingFang SC", sans-serif;
+    --display:"Fraunces", "Noto Serif SC", serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg); color:var(--ink); font-family:var(--sans);
+    -webkit-font-smoothing:antialiased; line-height:1.7; position:relative;
+    background-image:
+      radial-gradient(900px 500px at 12% -8%, rgba(189,60,30,.06), transparent 60%),
+      radial-gradient(800px 460px at 100% 0%, rgba(74,107,63,.05), transparent 55%);
+    background-attachment:fixed;
+  }
+  body::before{
+    content:""; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+    mix-blend-mode:multiply;
+  }
+  .wrap{position:relative; z-index:1; max-width:880px; margin:0 auto; padding:0 22px 120px;}
+
+  .en{font-family:var(--display); font-style:italic; font-weight:400; color:var(--muted);}
+
+  /* ===== 通用 section / 标题 ===== */
+  .section{padding:40px 0 14px;}
+  .sec-kicker{display:flex; align-items:center; gap:12px; margin-bottom:18px;}
+  .sec-no{font-family:var(--display); font-style:italic; font-weight:600; font-size:14px;
+    color:var(--accent); letter-spacing:.04em;}
+  .sec-kicker .ln{flex:1; height:1px; background:var(--line);}
+  .sec-kicker .en-tag{font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--muted);}
+  h2{font-family:var(--serif); font-weight:900; font-size:clamp(23px,3.6vw,32px); line-height:1.18;
+    letter-spacing:-.01em; color:var(--ink); margin-bottom:6px;}
+  h2 em{font-style:normal; color:var(--accent); position:relative; white-space:nowrap;}
+  h2 em::after{content:""; position:absolute; left:0; right:0; bottom:1px; height:8px; z-index:-1;
+    background:var(--accent-soft);}
+  .lead{color:var(--ink-soft); font-size:15.5px; max-width:62ch; margin-bottom:8px;}
+  h3{font-family:var(--serif); font-weight:700; font-size:18px; color:var(--ink); margin:4px 0;}
+  p{color:var(--ink-soft);}
+  strong{color:var(--ink); font-weight:700;}
+  .hl{background:linear-gradient(transparent 58%, var(--accent-soft) 58%); padding:0 1px;}
+
+  /* 正文两端对齐：每行铺满、右边不留空（标题/CTA 不受影响）*/
+  .lead, .cover .sub, .why .v p, .row .v, .gain, .star p,
+  .after-grid .c p, .faq .q p, .note-cost,
+  .steps li, .flow .stage li, .mini2 .m li, table.cmp td{
+    text-align:justify; text-justify:inter-ideograph;
+  }
+  /* 移除所有英文装饰标签 */
+  .sec-kicker .en-tag, .row .k .ken, footer .en{display:none !important;}
+
+  /* ===== 封面 ===== */
+  .cover{padding:48px 0 40px; display:grid; grid-template-columns:1.05fr .95fr; gap:40px;
+    align-items:center;}
+  .cover-art img{width:100%; height:auto; display:block; border-radius:18px;
+    box-shadow:var(--shadow-lift);}
+  .cover .kick{display:flex; align-items:center; gap:12px; margin-bottom:22px;}
+  .cover .kick .lbl{font-family:var(--display); font-style:italic; font-weight:600; font-size:14px;
+    color:var(--accent);}
+  .cover .kick .ln{flex:1; height:1px; background:var(--line);}
+  .cover .kick .biz{font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted);}
+  .cover h1{font-family:var(--serif); font-weight:900; font-size:clamp(32px,6.2vw,56px); line-height:1.12;
+    letter-spacing:-.015em; margin-bottom:18px;}
+  .cover h1 em{font-style:normal; color:var(--accent); position:relative; white-space:nowrap;}
+  .cover h1 em::after{content:""; position:absolute; left:0; right:0; bottom:3px; height:12px; z-index:-1;
+    background:var(--accent-soft);}
+  .cover .sub{font-size:18px; color:var(--ink-soft); max-width:56ch; line-height:1.65;}
+  .cover .sub b{color:var(--accent-deep);}
+  .cover-en{font-family:var(--display); font-style:italic; font-weight:500; color:var(--muted);
+    font-size:18px; margin:14px 0 26px;}
+  .cover-meta{display:flex; flex-wrap:wrap; gap:10px; margin-top:30px;}
+  .pill{display:inline-flex; align-items:center; gap:7px; background:var(--paper);
+    border:1px solid var(--line); border-radius:30px; padding:8px 16px; font-size:13px;
+    font-weight:500; color:var(--ink-soft); box-shadow:var(--shadow);}
+  .pill b{color:var(--accent);}
+
+  /* ===== 时间轴（服务全景）===== */
+  .flow{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:8px;}
+  .flow .stage{background:var(--paper); border:1px solid var(--rule); border-radius:18px;
+    padding:20px 18px; box-shadow:var(--shadow); position:relative;}
+  .flow .stage .ph{font-family:var(--display); font-style:italic; font-size:13px; color:var(--accent);
+    font-weight:600; margin-bottom:4px;}
+  .flow .stage h3{font-size:17px; margin-bottom:10px;}
+  .flow .stage ul{list-style:none; display:flex; flex-direction:column; gap:6px;}
+  .flow .stage li{font-size:13.5px; color:var(--ink-soft); padding-left:16px; position:relative;}
+  .flow .stage li::before{content:"›"; position:absolute; left:0; color:var(--accent); font-weight:700;}
+
+  /* ===== 价值点（为什么选展会测试）===== */
+  .why{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:14px;}
+  .why .v{background:var(--paper); border:1px solid var(--rule); border-radius:16px; padding:18px 16px;
+    box-shadow:var(--shadow);}
+  .why .v .ic{font-size:22px; margin-bottom:8px; display:block;}
+  .why .v h3{font-size:15.5px; margin-bottom:5px;}
+  .why .v p{font-size:13px; line-height:1.6;}
+
+  /* ===== 三种方式卡片 ===== */
+  .way{background:var(--paper); border:1px solid var(--rule); border-radius:20px; padding:0;
+    box-shadow:var(--shadow-lift); margin-top:22px; overflow:hidden;}
+  .way > .head{display:flex; align-items:flex-start; gap:16px; padding:24px 26px 20px;
+    border-bottom:1px solid var(--rule);
+    background:linear-gradient(180deg, var(--bg2), transparent);}
+  .way .num{flex:none; width:52px; height:52px; border-radius:15px; display:flex; align-items:center;
+    justify-content:center; font-family:var(--serif); font-weight:900; font-size:24px; color:#fff;
+    box-shadow:0 6px 14px -6px rgba(120,60,20,.5);}
+  .way.w1 .num{background:linear-gradient(135deg,var(--accent),var(--accent-deep));}
+  .way.w2 .num{background:linear-gradient(135deg,#3f6b8c,#2c4e6b);}
+  .way.w3 .num{background:linear-gradient(135deg,var(--keep),#3a5631);}
+  .way .head .tt{flex:1;}
+  .way .head .tag{font-family:var(--display); font-style:italic; font-size:13px; color:var(--accent);
+    font-weight:600;}
+  .way.w2 .head .tag{color:#3f6b8c;} .way.w3 .head .tag{color:var(--keep);}
+  .way .head h3{font-size:21px; font-weight:900; font-family:var(--serif); margin:2px 0 0;}
+  .way .head .one{font-size:13.5px; color:var(--muted); margin-top:4px;}
+  .way .body{padding:6px 26px 24px;}
+  .row{display:grid; grid-template-columns:96px 1fr; gap:14px; padding:15px 0;
+    border-bottom:1px dashed var(--rule);}
+  .row:last-child{border-bottom:none;}
+  .row .k{font-family:var(--serif); font-weight:700; font-size:14px; color:var(--accent-deep);
+    line-height:1.5;}
+  .way.w2 .row .k{color:#2c4e6b;} .way.w3 .row .k{color:#3a5631;}
+  .row .k .ken{display:block; font-family:var(--display); font-style:italic; font-weight:400;
+    font-size:11px; color:var(--muted); margin-top:1px;}
+  .row .v{font-size:14px; color:var(--ink-soft);}
+  .steps{list-style:none; display:flex; flex-direction:column; gap:9px; counter-reset:s;}
+  .steps li{position:relative; padding-left:30px; font-size:14px; color:var(--ink-soft);}
+  .steps li::before{counter-increment:s; content:counter(s); position:absolute; left:0; top:1px;
+    width:20px; height:20px; border-radius:7px; background:var(--accent-soft); color:var(--accent-deep);
+    font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center;
+    font-family:var(--display);}
+  .way.w2 .steps li::before{background:#dbe8f1; color:#2c4e6b;}
+  .way.w3 .steps li::before{background:var(--keep-soft); color:#3a5631;}
+  .steps li b{color:var(--ink);}
+  .deliver{list-style:none; display:flex; flex-wrap:wrap; gap:8px;}
+  .deliver li{font-size:12.5px; background:var(--bg2); border:1px solid var(--line); border-radius:9px;
+    padding:6px 11px; color:var(--ink-soft);}
+  .deliver li b{color:var(--ink);}
+  .gain{background:var(--accent-soft); border-radius:12px; padding:13px 16px; font-size:14px;
+    color:var(--accent-deep); font-weight:500; line-height:1.6;}
+  .way.w2 .gain{background:#e8f0f6; color:#2c4e6b;}
+  .way.w3 .gain{background:var(--keep-soft); color:#3a5631;}
+  .note-cost{margin-top:14px; font-size:12.5px; color:var(--muted); background:#fbf6ec;
+    border:1px dashed var(--line); border-radius:10px; padding:11px 14px;}
+  .note-cost b{color:var(--ink-soft);}
+
+  /* ===== 三阶段详细清单 ===== */
+  .phases{display:flex; flex-direction:column; gap:14px; margin-top:14px;}
+  .phase{background:var(--paper); border:1px solid var(--rule); border-radius:18px; overflow:hidden;
+    box-shadow:var(--shadow);}
+  .phase.p-pre{border-top:3px solid var(--accent);}
+  .phase.p-mid{border-top:3px solid var(--blue);}
+  .phase.p-post{border-top:3px solid var(--keep);}
+  .phase .ph-h{display:flex; align-items:center; gap:11px; padding:15px 22px;
+    border-bottom:1px solid var(--rule); background:linear-gradient(180deg,var(--bg2),transparent);}
+  .phase .ph-ic{font-size:18px;}
+  .phase .ph-t{font-family:var(--serif); font-weight:900; font-size:18px; color:var(--ink);}
+  .phase .ph-en{font-family:var(--display); font-style:italic; font-size:12px; color:var(--muted);
+    margin-left:auto;}
+  .phase .ph-list{list-style:none; padding:15px 22px 18px; display:flex; flex-direction:column; gap:11px;}
+  .phase .ph-list li{font-size:14px; color:var(--ink-soft); line-height:1.62; padding-left:18px;
+    position:relative; text-align:justify; text-justify:inter-ideograph;}
+  .phase .ph-list li::before{content:""; position:absolute; left:1px; top:9px; width:7px; height:7px;
+    border-radius:50%; background:var(--accent);}
+  .phase.p-mid .ph-list li::before{background:var(--blue);}
+  .phase.p-post .ph-list li::before{background:var(--keep);}
+  .phase .ph-list li b{color:var(--ink); font-weight:700;}
+  /* 创意现场发生 高亮卡 */
+  .live{margin:2px 22px 18px; background:var(--gold-soft); border:1px solid #e3cd9e; border-radius:14px;
+    padding:16px 18px;}
+  .live .lv-lab{font-family:var(--serif); font-weight:700; font-size:15px; color:#7a5410;
+    display:flex; align-items:center; gap:7px;}
+  .live .lv-en{font-family:var(--display); font-style:italic; font-size:12px; color:var(--gold);
+    display:block; margin:2px 0 9px;}
+  .live p{font-size:13.5px; color:var(--ink-soft); line-height:1.78; text-align:justify;
+    text-justify:inter-ideograph;}
+  .live b{color:#7a5410;}
+
+  /* highlight 调研员卖点 */
+  .star{background:var(--gold-soft); border:1px solid #e3cd9e; border-radius:12px; padding:13px 16px;
+    margin-top:8px;}
+  .star .lab{font-family:var(--display); font-style:italic; font-weight:600; font-size:12px;
+    color:var(--gold); display:block; margin-bottom:3px;}
+  .star p{font-size:13.5px; color:var(--ink-soft);}
+  .star b{color:#7a5410;}
+
+  /* ===== GMA 专属｜资源与机会 ===== */
+  .gma{background:var(--gold-soft); border:1px solid #e3cd9e; border-radius:16px;
+    padding:18px 20px 16px; margin-top:16px;}
+  .gma .g-h{font-family:var(--serif); font-weight:700; font-size:16px; color:#7a5410;
+    display:flex; align-items:center; gap:7px;}
+  .gma .g-en{font-family:var(--display); font-style:italic; font-size:12px; color:var(--gold);
+    display:block; margin:2px 0 12px;}
+  .gma .g-list{list-style:none; padding:0; margin:0; display:grid; gap:11px;}
+  .gma .g-list li{position:relative; padding-left:17px; font-size:13.5px; line-height:1.75;
+    color:var(--ink-soft); text-align:justify; text-justify:inter-ideograph;}
+  .gma .g-list li::before{content:""; position:absolute; left:1px; top:9px; width:7px; height:7px;
+    border-radius:50%; background:var(--gold);}
+  .gma .g-list li b{color:#7a5410; font-weight:700;}
+  /* GMA 卡片式（放进「你将获得」时使用）*/
+  .gma .g-cards{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:2px;}
+  .gma .g-cards .gc{background:var(--paper); border:1px solid #e3cd9e; border-radius:14px;
+    padding:15px 16px 14px; box-shadow:var(--shadow);}
+  .gma .g-cards .gc .gc-no{font-family:var(--display); font-style:italic; font-weight:600;
+    font-size:13px; color:var(--gold);}
+  .gma .g-cards .gc h4{font-family:var(--serif); font-weight:700; font-size:14.5px; color:#7a5410;
+    margin:3px 0 6px; line-height:1.4;}
+  .gma .g-cards .gc p{font-size:13px; line-height:1.72; color:var(--ink-soft);
+    text-align:justify; text-justify:inter-ideograph;}
+  @media (max-width:820px){ .gma .g-cards{grid-template-columns:1fr;} }
+
+  /* ===== 展会后服务（额外收费）===== */
+  .paid-banner{display:flex; align-items:center; gap:10px; background:var(--accent);
+    color:#fff; border-radius:12px; padding:11px 18px; font-size:13.5px; font-weight:500;
+    margin-bottom:18px; box-shadow:0 8px 20px -8px rgba(189,60,30,.5);}
+  .paid-banner .tg{font-size:11px; letter-spacing:.05em; background:rgba(255,255,255,.22);
+    padding:3px 9px; border-radius:20px; font-weight:700;}
+  .after-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px;}
+  .after-grid .c{background:var(--paper); border:1px solid var(--rule); border-radius:16px;
+    padding:18px 18px; box-shadow:var(--shadow);}
+  .after-grid .c .no{font-family:var(--display); font-style:italic; font-weight:600; color:var(--accent);
+    font-size:13px;}
+  .after-grid .c h3{font-size:16px; margin:3px 0 6px;}
+  .after-grid .c p{font-size:13.5px; line-height:1.6;}
+  .after-grid .c.span2{grid-column:1 / -1;}
+  .conv{list-style:none; display:flex; flex-wrap:wrap; gap:9px; margin-top:10px;}
+  .conv li{font-size:13px; background:var(--accent-soft); color:var(--accent-deep); border-radius:9px;
+    padding:7px 13px; font-weight:500;}
+
+  /* ===== 对比表 ===== */
+  .cmp-scroll{overflow-x:auto; margin-top:6px; border-radius:16px; box-shadow:var(--shadow);}
+  table.cmp{width:100%; border-collapse:collapse; background:var(--paper); min-width:620px;
+    font-size:13.5px;}
+  table.cmp th, table.cmp td{text-align:left; padding:14px 16px; border-bottom:1px solid var(--rule);
+    vertical-align:top;}
+  table.cmp thead th{background:var(--bg2); font-family:var(--serif); font-weight:900; font-size:14px;
+    color:var(--ink); position:sticky; top:0;}
+  table.cmp thead th .en-s{display:block; font-family:var(--display); font-style:italic; font-weight:400;
+    font-size:11px; color:var(--muted);}
+  table.cmp tbody th{font-family:var(--serif); font-weight:700; color:var(--accent-deep); width:120px;
+    background:#fbf6ec; font-size:15px;}
+  table.pricetbl thead th:first-child{color:var(--accent-deep); font-size:15px;}
+  table.cmp td{color:var(--ink-soft); line-height:1.55;}
+  table.cmp .w1c{border-top:3px solid var(--accent);}
+  table.cmp .w2c{border-top:3px solid #3f6b8c;}
+  table.cmp .w3c{border-top:3px solid var(--keep);}
+  table.cmp .price{font-weight:700; color:var(--ink);}
+  .tbd{background:var(--accent-soft); color:var(--accent-deep); border-radius:6px; padding:1px 7px;
+    font-size:12px; font-weight:600; white-space:nowrap;}
+
+  /* ===== 价格表（强调）===== */
+  table.cmp .w4c{border-top:3px solid var(--gold);}
+  table.cmp thead th.tierh{font-size:14.5px; line-height:1.3;}
+  table.cmp thead th.tierh small{display:block; font-family:var(--sans); font-style:normal;
+    font-weight:500; font-size:11px; color:var(--muted); margin-top:3px;}
+  table.cmp thead th.rec{position:relative;}
+  table.cmp thead th.rec .pick{position:absolute; top:6px; right:8px; background:var(--accent); color:#fff;
+    font-size:10px; font-weight:700; padding:2px 8px; border-radius:20px; letter-spacing:.02em;}
+  .pr-old{display:inline-block; font-size:12px; color:var(--muted); text-decoration:line-through;}
+  .pr-now{display:block; font-family:var(--serif); font-weight:900; font-size:22px; color:var(--accent-deep);
+    margin-top:2px;}
+  .pr-now small{display:block; font-family:var(--sans); font-weight:600; font-size:15px; color:var(--accent);
+    margin-bottom:1px;}
+  .pr-quote{font-weight:700; color:var(--ink);}
+  .fee-big{font-family:var(--serif); font-weight:800; color:var(--ink); font-size:15px;}
+  .fee-big small{font-family:var(--sans); font-weight:500; font-size:11px; color:var(--muted);}
+  .comm-y{color:var(--accent-deep); font-weight:600;}
+  .comm-n{color:var(--keep); font-weight:700;}
+  tr.row-price td{background:#fbf6ec;}
+  /* 列竖线分隔 + 可拖拽调宽 */
+  table.pricetbl{table-layout:fixed;}
+  table.pricetbl th, table.pricetbl td{border-right:1px solid var(--line);}
+  table.pricetbl th:last-child, table.pricetbl td:last-child{border-right:none;}
+  table.pricetbl thead th{position:relative; overflow:visible;}
+  .col-resizer{position:absolute; top:0; right:-4px; width:9px; height:100%; cursor:col-resize;
+    z-index:6; user-select:none;}
+  .col-resizer:hover::before, .col-resizing .col-resizer::before{content:""; position:absolute; left:4px;
+    top:0; width:2px; height:100%; background:var(--accent);}
+  body.col-resizing, body.col-resizing *{cursor:col-resize !important; user-select:none !important;}
+
+  /* ════════ 价格表高级化 ════════ */
+  .cmp-scroll{border:1px solid #e6dcc6; box-shadow:var(--shadow-lift); margin-top:14px;}
+  table.pricetbl{background:linear-gradient(180deg,#fffefb,#fbf5ea); font-size:14px;}
+  table.pricetbl th, table.pricetbl td{padding:16px 18px; border-bottom:1px solid #ece2cd;
+    border-right-color:#ece2cd;}
+  /* 表头：渐变 + 强调下边线 */
+  table.pricetbl thead th{background:linear-gradient(180deg,#f4ebd8,#ecdfc6); border-bottom:2px solid #ddc9a3;}
+  table.pricetbl thead th.tierh{font-size:16px;}
+  table.pricetbl thead th.tierh small{font-size:11.5px; margin-top:5px;}
+  /* 顶部强调条：其余列统一细金线，推荐列实心红 */
+  table.pricetbl .w1c, table.pricetbl .w3c, table.pricetbl .w4c{border-top:3px solid #e0cfa6;}
+  table.pricetbl .w2c{border-top:3px solid var(--accent);}
+  /* 推荐列（优选版）表头高亮 + 角标浮起 */
+  table.pricetbl thead th.rec{background:linear-gradient(180deg,#fbe7db,#f5dac8);}
+  table.pricetbl thead th.rec .pick{top:-1px; right:10px;
+    box-shadow:0 5px 12px -4px rgba(189,60,30,.55);}
+  /* 首列精致化 */
+  table.pricetbl tbody th{background:linear-gradient(180deg,#fbf4e6,#f5ecd6);}
+  table.pricetbl thead th:first-child{background:linear-gradient(180deg,#f1e6cf,#e8d9bb);}
+  /* 行悬停高亮（仅屏幕）*/
+  @media (hover:hover) and (pointer:fine){
+    table.pricetbl tbody tr:hover td, table.pricetbl tbody tr:hover th{background-color:#fcf4e4;}
+  }
+  /* 价格行强调 + 末行去底边 */
+  table.pricetbl tr.row-price td, table.pricetbl tr.row-price th{background:#fcf6ea;
+    border-top:1px solid #e6d8b8;}
+  table.pricetbl tbody tr:last-child td, table.pricetbl tbody tr:last-child th{border-bottom:none;}
+  .promo{position:relative; margin-top:14px; background:var(--accent-soft); border:1px solid #f0c3b2;
+    border-radius:14px; padding:16px 18px; box-shadow:var(--shadow);}
+  .promo-sticker{position:absolute; top:-16px; right:16px; font-size:32px; transform:rotate(12deg);
+    filter:drop-shadow(0 3px 5px rgba(120,40,20,.28)); pointer-events:none;}
+  .promo .pt{font-family:var(--serif); font-weight:900; color:var(--accent-deep); font-size:17px;
+    display:flex; align-items:center; gap:9px; margin-bottom:9px;}
+  .promo .pt .tg{font-size:11px; background:var(--accent); color:#fff; padding:3px 11px; border-radius:20px;
+    font-weight:700; letter-spacing:.02em;}
+  .promo .intro{font-size:15.5px; color:var(--accent-deep); margin-bottom:9px; line-height:1.6;}
+  .promo .intro b{color:#7a2a12;}
+  .promo ul{list-style:none; display:flex; flex-direction:column; gap:7px;}
+  .promo li{font-size:15.5px; color:var(--accent-deep); padding-left:24px; position:relative; line-height:1.55;}
+  .promo li::before{content:"✦"; position:absolute; left:2px; top:1px; color:var(--accent); font-weight:700;}
+  .promo li b{color:#7a2a12; font-weight:700;}
+
+  /* ===== 第08节 · 具体信息 / 申请流程 ===== */
+  .corepos{background:linear-gradient(135deg,var(--accent),var(--accent-deep)); color:#fff;
+    border-radius:16px; padding:20px 24px; margin-top:14px; box-shadow:var(--shadow-lift);}
+  .corepos .lab{font-family:var(--display); font-style:italic; font-weight:600; font-size:12px;
+    color:rgba(255,255,255,.82); display:block; margin-bottom:5px;}
+  .corepos p{color:#fff; font-size:16px; line-height:1.62; font-weight:500;}
+  .corepos b{color:#ffe1b0;}
+  .subh{font-family:var(--serif); font-weight:900; font-size:18px; color:var(--ink); margin:30px 0 2px;
+    display:flex; align-items:center; gap:9px;}
+  .subh::before{content:""; width:5px; height:19px; background:var(--accent); border-radius:3px;}
+  .kv{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:14px;}
+  .kv .item{background:var(--paper); border:1px solid var(--rule); border-radius:14px; padding:15px 18px;
+    box-shadow:var(--shadow);}
+  .kv .item .k{font-size:16px; color:var(--accent); font-weight:700; letter-spacing:.04em; margin-bottom:5px;
+    font-family:var(--serif);}
+  .kv .item .v{font-size:15px; color:var(--ink); line-height:1.55;}
+  .kv .item .v b{color:var(--accent-deep);}
+  .kv .item .v .big{font-family:var(--serif); font-weight:900; font-size:18px; color:var(--accent-deep);}
+  .kv .item.wide{grid-column:1 / -1;}
+  .spotlight{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:12px;}
+  .spotlight .s{background:var(--gold-soft); border:1px solid #e3cd9e; border-radius:14px; padding:16px 18px;}
+  .spotlight .s h4{font-family:var(--serif); font-weight:700; font-size:15px; color:#7a5410; margin-bottom:6px;
+    display:flex; gap:7px; align-items:center;}
+  .spotlight .s p{font-size:13px; color:var(--ink-soft); line-height:1.68; text-align:justify;
+    text-justify:inter-ideograph;}
+  .sched{margin-top:14px; display:flex; flex-direction:column; border-left:2px solid var(--line);
+    margin-left:5px;}
+  .sched .day{position:relative; padding:0 0 16px 24px;}
+  .sched .day:last-child{padding-bottom:2px;}
+  .sched .day::before{content:""; position:absolute; left:-6px; top:4px; width:10px; height:10px;
+    border-radius:50%; background:var(--accent); border:2px solid var(--bg);}
+  .sched .d-date{font-family:var(--serif); font-weight:700; font-size:14.5px; color:var(--ink);}
+  .sched .d-body{font-size:13.5px; color:var(--ink-soft); line-height:1.6; margin-top:3px;}
+  .sched .slot{margin-top:6px; padding-left:2px;}
+  .sched .slot .tm{font-family:var(--display); font-weight:600; font-style:italic; color:var(--accent);
+    margin-right:6px;}
+  .sched .slot b{color:var(--accent-deep);}
+  .proc{counter-reset:p; display:flex; flex-direction:column; gap:14px; margin-top:14px;}
+  .proc .step{background:var(--paper); border:1px solid var(--rule); border-radius:16px;
+    padding:18px 20px 18px 58px; position:relative; box-shadow:var(--shadow);}
+  .proc .step::before{counter-increment:p; content:counter(p); position:absolute; left:18px; top:18px;
+    width:28px; height:28px; border-radius:9px; background:var(--accent); color:#fff;
+    font-family:var(--display); font-weight:700; display:flex; align-items:center; justify-content:center;
+    font-size:14px;}
+  .proc .step h4{font-family:var(--serif); font-weight:700; font-size:16px; color:var(--ink); margin-bottom:7px;}
+  .proc .step ul{list-style:none; display:flex; flex-direction:column; gap:6px;}
+  .proc .step li{font-size:13.5px; color:var(--ink-soft); line-height:1.62; padding-left:16px; position:relative;}
+  .proc .step li::before{content:"·"; position:absolute; left:4px; color:var(--accent); font-weight:700;}
+  .proc .step li b{color:var(--ink);}
+
+  /* ===== 第01节 · 关于我们 ===== */
+  .adv{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:14px;}
+  .adv .ad{background:var(--paper); border:1px solid var(--rule); border-radius:16px; padding:18px 20px;
+    box-shadow:var(--shadow);}
+  .adv .ad h4{font-family:var(--serif); font-weight:700; font-size:15.5px; color:var(--ink); margin-bottom:6px;}
+  .adv .ad p{font-size:13.5px; color:var(--ink-soft); line-height:1.66; text-align:justify;
+    text-justify:inter-ideograph;}
+  .invite{margin-top:22px; background:var(--accent-soft); border:1px solid #f0c3b2; border-radius:14px;
+    padding:16px 20px; font-family:var(--serif); font-weight:700; color:var(--accent-deep); font-size:15.5px;
+    line-height:1.62;}
+  /* 关于我们：段落占满整行（去掉右侧留白）+ 重点词强调 */
+  #about .lead{max-width:none;}
+  .key{color:var(--accent-deep); font-weight:700;}
+  /* 图片 figure */
+  .figimg{margin-top:22px;}
+  .figimg img{width:100%; height:auto; display:block; border-radius:16px; box-shadow:var(--shadow-lift);}
+  .figimg figcaption{margin-top:9px; text-align:center; font-size:12.5px; color:var(--muted);}
+  /* 图文左右排版 */
+  .lead-row{display:grid; grid-template-columns:1.02fr .98fr; gap:26px; align-items:center; margin-bottom:6px;}
+  .lead-row .lead{margin-bottom:0; max-width:none;}
+  .lead-row .figimg{margin-top:0;}
+
+  /* ════════ 卡片高级感统一升级（参考数据条质感）════════ */
+  /* 中性卡片：微渐变 + 细腻暖边 + 大圆角 + 顶部内高光 + 分层阴影 + 悬停浮起 */
+  .why .v, .phase, .adv .ad, .kv .item, .proc .step, .faq .q, .mini2 .m, .flow .stage{
+    background:linear-gradient(180deg, #fffefb, #f7f0e1);
+    border:1px solid #e7ddc8;
+    border-radius:18px;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.7), var(--shadow);
+    transition:transform .26s cubic-bezier(.2,.7,.3,1), box-shadow .26s ease;
+  }
+  @media (hover:hover) and (pointer:fine){
+    .why .v:hover, .phase:hover, .adv .ad:hover, .kv .item:hover, .proc .step:hover, .faq .q:hover,
+    .mini2 .m:hover{
+      transform:translateY(-3px);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.7), var(--shadow-lift);
+    }
+  }
+  /* 强调卡片（金/红/二维码）：统一圆角与高级阴影 */
+  .spotlight .s, .live, .promo, .corepos, .invite{border-radius:16px; box-shadow:var(--shadow);}
+  .qr-card{border-radius:18px !important;}
+  .cmp-scroll{border-radius:18px;}
+
+  /* ===== 选展标准 / 保障 小卡 ===== */
+  .mini2{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:14px;}
+  .mini2 .m{background:var(--paper); border:1px solid var(--rule); border-radius:16px; padding:18px;
+    box-shadow:var(--shadow);}
+  .mini2 .m h3{font-size:16px; margin-bottom:8px;}
+  .mini2 .m ul{list-style:none; display:flex; flex-direction:column; gap:6px;}
+  .mini2 .m li{font-size:13.5px; color:var(--ink-soft); padding-left:18px; position:relative;}
+  .mini2 .m li::before{content:"✓"; position:absolute; left:0; color:var(--keep); font-weight:700;}
+
+  /* ===== FAQ ===== */
+  .faq{display:flex; flex-direction:column; gap:10px; margin-top:8px;}
+  .faq .q{background:var(--paper); border:1px solid var(--rule); border-radius:14px; padding:15px 18px;
+    box-shadow:var(--shadow);}
+  .faq .q h3{font-size:14.5px; margin-bottom:4px; display:flex; gap:8px;}
+  .faq .q h3::before{content:"问"; font-family:var(--serif); color:var(--accent);
+    font-weight:700;}
+  .faq .q p{font-size:13.5px; padding-left:18px;}
+
+  /* ===== CTA ===== */
+  .cta{margin-top:46px; background:linear-gradient(135deg, var(--ink), #2f2719); color:#f3ebdd;
+    border-radius:22px; padding:38px 34px; text-align:center; box-shadow:var(--shadow-lift);}
+  .cta h2{color:#fff; margin-bottom:8px;}
+  .cta h2 em{color:#f0b59d;} .cta h2 em::after{background:rgba(240,181,157,.2);}
+  .cta p{color:#d8c9ad; font-size:15px; max-width:46ch; margin:0 auto 22px;}
+  .cta .contacts{display:flex; flex-wrap:wrap; justify-content:center; gap:12px;}
+  .cta .contacts .c{background:rgba(255,255,255,.08); border:1px solid rgba(243,235,221,.18);
+    border-radius:30px; padding:11px 22px; font-size:14px; color:#f3ebdd;}
+  .cta .contacts .c b{color:#f0b59d;}
+
+  /* ===== CTA 内部：特惠 / 预约 / 二维码 ===== */
+  .cta .offer{background:rgba(255,255,255,.07); border:1px solid rgba(243,235,221,.2); border-radius:16px;
+    padding:18px 22px; margin:4px auto 24px; max-width:600px; text-align:left;}
+  .cta .offer .ot{font-family:var(--serif); font-weight:900; color:#f0b59d; font-size:16.5px; margin-bottom:9px;
+    text-align:center;}
+  .cta .offer .lead2{font-size:13.5px; color:#d8c9ad; margin-bottom:11px; text-align:center; line-height:1.55;}
+  .cta .offer ul{list-style:none; display:flex; flex-direction:column; gap:8px;}
+  .cta .offer li{font-size:14px; color:#f3ebdd; line-height:1.55;}
+  .cta .offer li b{color:#ffd9a0;}
+  .cta .book-tt{font-family:var(--serif); font-weight:900; color:#fff; font-size:19px; margin:8px 0 6px;}
+  .cta .book-pts{list-style:none; max-width:600px; margin:0 auto 18px; text-align:left; display:flex;
+    flex-direction:column; gap:9px;}
+  .cta .book-pts li{font-size:14px; color:#e8dcc6; line-height:1.6;}
+  .cta .book-pts li b{color:#f0b59d;}
+  .cta .qr-note{font-size:13.5px; color:#e8dcc6; margin:2px 0 12px;}
+  .cta .qr-note b{color:#f0b59d;}
+  .cta .qrs{display:flex; flex-wrap:wrap; justify-content:center; gap:18px; margin-bottom:18px;}
+  .cta .qr-card{background:#fffdf8; border-radius:16px; padding:12px 12px 11px; width:208px;
+    box-shadow:var(--shadow-lift);}
+  .cta .qr-card img{width:100%; height:auto; display:block; border-radius:8px;}
+  .cta .qr-card .nm{font-family:var(--serif); font-weight:700; color:var(--ink); font-size:15px; margin-top:8px;}
+  .cta .qr-card .rg{font-size:12px; color:var(--muted);}
+  .cta .emails{font-size:13.5px; color:#e8dcc6; line-height:1.9; margin-top:4px;}
+  .cta .emails b{color:#f0b59d;}
+  .cta .brandline{margin-top:22px; padding-top:18px; border-top:1px solid rgba(243,235,221,.16);
+    font-family:var(--serif); font-weight:700; color:#f0b59d; font-size:15px;}
+
+  footer{text-align:center; margin-top:34px; font-size:12px; color:var(--muted);}
+  footer .en{font-size:12px;}
+
+  /* ===== 顶部下载提示条（打印时隐藏）===== */
+  .topbar{position:sticky; top:0; z-index:50; background:rgba(243,235,221,.86);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--rule); padding:9px 22px;
+    display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:12.5px;
+    color:var(--muted);}
+  .topbar .brand{font-family:var(--serif); font-weight:700; color:var(--ink); font-size:13px;}
+  .topbar .tb-btns{display:flex; gap:8px;}
+  .topbar button{font-family:var(--sans); cursor:pointer; border:none; font-size:12.5px; font-weight:600;
+    color:#fff; background:linear-gradient(135deg,var(--accent),var(--accent-deep));
+    border-radius:9px; padding:7px 15px; box-shadow:0 6px 14px -6px rgba(189,60,30,.6);}
+  .topbar button.ghost{background:transparent; color:var(--muted); border:1px solid var(--line);
+    box-shadow:none;}
+  .topbar button.on{background:linear-gradient(135deg,var(--keep),#3a5631);
+    box-shadow:0 6px 14px -6px rgba(74,107,63,.6);}
+
+  /* 编辑模式：可编辑区域提示 */
+  body.editing{cursor:text;}
+  body.editing .wrap{outline:2px dashed var(--accent); outline-offset:6px; border-radius:8px;}
+  body.editing .wrap *:focus{outline:2px solid var(--accent); outline-offset:2px; border-radius:3px;}
+  .edit-tip{display:none;}
+  body.editing .edit-tip{display:block; position:sticky; top:44px; z-index:49;
+    background:var(--keep-soft); border:1px solid var(--keep-line); color:#3a5631;
+    border-radius:10px; padding:8px 14px; font-size:12.5px; margin:10px auto 0; max-width:880px;}
+
+  /* ===== 数字数据 band（客流 / 媒体 / 客质）===== */
+  .databand{display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:18px;
+    background:linear-gradient(180deg,#fffdf8,#f6eedd); border:1px solid var(--line); border-radius:18px;
+    overflow:hidden; box-shadow:var(--shadow-lift);}
+  .databand .stat{background:transparent; border:none; border-radius:0; box-shadow:none; text-align:center;
+    padding:26px 14px 22px; border-right:1px solid var(--line); position:relative;}
+  .databand .stat:last-child{border-right:none;}
+  .databand .stat::before{content:""; position:absolute; top:0; left:0; right:0; height:3px;
+    background:linear-gradient(90deg,var(--accent),var(--gold));}
+  .databand .stat .big{font-family:var(--display); font-weight:700; font-size:42px; line-height:1.0;
+    color:var(--accent-deep); letter-spacing:-.02em;}
+  .databand .stat .big small{font-size:16px; font-weight:700; margin-left:2px; color:var(--accent);}
+  .databand .stat .cap{font-family:var(--serif); font-weight:700; font-size:13.5px; color:var(--ink);
+    margin-top:11px;}
+  .databand .stat .src{font-size:11px; color:var(--muted); margin-top:3px; line-height:1.45;}
+  .databand .stat.todo .big{color:var(--accent-deep);}
+
+  /* ===== 第02节：减少白框，呈现更轻 ===== */
+  #sec-why .why{margin-top:18px; gap:0; grid-template-columns:repeat(2,1fr);}
+  #sec-why .why .v{background:transparent; border:none; box-shadow:none; padding:6px 22px 6px 0;
+    border-right:1px solid var(--rule);}
+  #sec-why .why .v:last-child{border-right:none; padding-right:0;}
+  #sec-why .why .v + .v{padding-left:22px;}
+  /* 数据条样式已统一在 .databand 基础类中 */
+
+  /* ===== 出海三阶段 · 报价阶梯 ===== */
+  .ladder{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:16px;}
+  .ladder .tier{background:var(--paper); border:1px solid var(--rule); border-radius:18px;
+    padding:22px 20px; box-shadow:var(--shadow); position:relative; display:flex; flex-direction:column;}
+  .ladder .tier.cur{border-color:var(--accent); box-shadow:var(--shadow-lift);
+    background:linear-gradient(180deg,var(--accent-soft),var(--paper) 42%);}
+  .ladder .tier .st{font-family:var(--display); font-style:italic; font-weight:600; font-size:12px;
+    color:var(--muted); letter-spacing:.04em;}
+  .ladder .tier.cur .st{color:var(--accent);}
+  .ladder .tier h3{font-size:18px; margin:2px 0 2px;}
+  .ladder .tier .en{font-family:var(--display); font-style:italic; font-weight:500; font-size:13px;
+    color:var(--muted); display:block; margin-bottom:8px;}
+  .ladder .tier .pos{font-size:13px; color:var(--ink-soft); line-height:1.55; margin-bottom:12px;
+    min-height:42px;}
+  .ladder .tier .inc{list-style:none; display:flex; flex-direction:column; gap:5px; margin-bottom:14px;}
+  .ladder .tier .inc li{font-size:12.5px; color:var(--ink-soft); padding-left:15px; position:relative;}
+  .ladder .tier .inc li::before{content:"·"; position:absolute; left:3px; color:var(--accent); font-weight:700;}
+  .ladder .tier .price{margin-top:auto; font-family:var(--serif); font-weight:900; font-size:22px;
+    color:var(--ink); padding-top:10px; border-top:1px solid var(--rule);}
+  .ladder .tier.cur .price{color:var(--accent-deep);}
+  .ladder .tier .price small{font-size:12px; font-weight:500; color:var(--muted); margin-left:4px;}
+  .ladder .tier .badge{position:absolute; top:-10px; right:16px; background:var(--accent); color:#fff;
+    font-size:11px; font-weight:700; border-radius:20px; padding:3px 11px;
+    box-shadow:0 6px 14px -6px rgba(189,60,30,.6);}
+
+  /* ===== 我们的不同（差异化板块）===== */
+  .diff{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:14px;}
+  .diff .d{background:var(--paper); border:1px solid var(--rule); border-radius:16px; padding:18px;
+    box-shadow:var(--shadow);}
+  .diff .d .ic{font-size:20px; display:block; margin-bottom:6px;}
+  .diff .d h3{font-size:15.5px; margin-bottom:5px;}
+  .diff .d p{font-size:13px; line-height:1.6; color:var(--ink-soft);}
+  .punch{margin-top:16px; background:linear-gradient(135deg,var(--ink),#3a2f1d); color:#f3ebdd;
+    border-radius:14px; padding:18px 22px; font-family:var(--serif); font-weight:700; font-size:16px;
+    line-height:1.6; box-shadow:var(--shadow-lift);}
+  .punch b{color:#f0b59d;}
+
+  @media (max-width:680px){
+    .flow,.why,.after-grid,.mini2,.databand,.ladder,.diff,.kv,.spotlight,.adv,.lead-row{grid-template-columns:1fr;}
+    .databand{grid-template-columns:repeat(2,1fr) !important;}
+    /* 第02节移动端：分隔线改回卡片，避免错位 */
+    #sec-why .why .v{border-right:none; padding:0 0 4px;}
+    #sec-why .why .v + .v{padding-left:0;}
+    .databand .stat{border-right:none;}
+    .databand .stat:nth-child(odd){border-right:1px solid var(--line);}
+    .databand .stat:nth-child(-n+2){border-bottom:1px solid var(--line);}
+    .cover{grid-template-columns:1fr; gap:26px; padding:30px 0 30px;}
+    .cover-art{order:-1;}
+    .row{grid-template-columns:1fr; gap:5px;}
+    .row .k .ken{display:inline; margin-left:6px;}
+    .cover h1{font-size:34px;}
+    .topbar .hint{display:none;}
+  }
+
+  /* ===== 打印 / 导出 PDF ===== */
+  @media print{
+    @page{size:A4 portrait; margin:14mm 12mm;}
+    html,body{background:#fff !important;}
+    body::before{display:none;}
+    .topbar,.edit-tip{display:none !important;}
+    body.editing .wrap{outline:none !important;}
+    .wrap{max-width:100%; padding:0;}
+    *{-webkit-print-color-adjust:exact !important; print-color-adjust:exact !important;}
+    .section{padding:20px 0 6px;}
+    .cover{padding:10px 0 24px;}
+    .way{overflow:visible;}
+    .way .head,.way .row,.star,.gain,.after-grid .c,.flow .stage,.why .v,.mini2 .m,.faq .q,.cta,
+    .databand .stat,.ladder .tier,.diff .d,.punch,.phase,.live,
+    .corepos,.kv .item,.spotlight .s,.proc .step,.promo,
+    .cta .offer,.cta .qr-card,.adv .ad,.invite,.figimg{break-inside:avoid;}
+    .cmp-scroll{overflow:visible;} table.cmp{min-width:0;}
+    .cta{margin-top:24px;}
+    a{color:inherit; text-decoration:none;}
+  }
+</style>
+
+
+
+
+<!-- 顶部条：屏幕可见，打印自动隐藏 -->
+<div class="topbar">
+  <!-- TODO-BRAND：把"新加坡市场验证"换成你的公司/品牌名 -->
+  <span class="brand">Global Market Accelerator · 新加坡站</span>
+  <span class="hint">F1 Pit Building · 2026/11/20–22 · 可在线编辑文字、保存 PDF</span>
+  <span class="tb-btns">
+    <span style="font-size: 12px; align-self: center; color: var(--muted); min-width: 74px; text-align: right;">✓ 已保存 00:33:14</span><span style="font-size: 12px; align-self: center; color: var(--muted); min-width: 74px; text-align: right;">✓ 已保存 01:10:22</span><span style="font-size: 12px; align-self: center; color: var(--muted); min-width: 74px; text-align: right;">✓ 已保存 01:28:00</span><span style="font-size: 12px; align-self: center; color: var(--muted); min-width: 74px; text-align: right;">✓ 已保存 01:34:03</span><span style="font-size: 12px; align-self: center; color: var(--muted); min-width: 74px; text-align: right;">✓ 已保存 01:49:47</span><span style="font-size: 12px; align-self: center; color: var(--muted); min-width: 74px; text-align: right;">✓ 已保存 01:57:06</span><button id="btnReset" class="ghost" onclick="resetEdit()" style="display: none;">↺ 还原默认</button>
+    <button id="btnExport" class="ghost" onclick="exportEdited()">⬇️ 导出 HTML</button>
+    <button id="btnEdit" onclick="toggleEdit()" class="">✏️ 编辑文字</button>
+    <button onclick="window.print()">⤓ 保存 / 打印 PDF</button>
+  </span>
+</div>
+
+<div class="edit-tip">✏️ 编辑模式已开启 —— 点任意文字即可直接修改，改动会自动保存在本浏览器。改完点「✅ 完成编辑」，或「↺ 还原默认」恢复原稿。</div>
+
+<div class="wrap">
+
+  <!-- ════════════════════════ 封面 ════════════════════════ -->
+  <header class="cover">
+    <div class="cover-text">
+      <div class="kick">
+        <!-- TODO-BRAND -->
+        <span class="biz">Global Market Accelerator 新加坡站 · F1 Pit Building</span>
+        <span class="ln"></span>
+      </div>
+      <h1>东南亚市场验证<br><em>出海高地-新加坡</em></h1>
+      <p class="cover-en">高效出海，先验证，再投入</p>
+      <p class="sub">带你<strong>走进东南亚最成熟的消费场景（新加坡</strong><span style="font-weight: 700; color: rgb(34, 28, 20);"> · 滨海湾 F1 Pit Building）</span>，<span style="color: rgb(34, 28, 20); font-family: &quot;Noto Serif SC&quot;, serif; font-weight: 700;">验证产品、建立品牌认知 、连接本地资源。帮助你</span><b>以最小成本验证新加坡本地消费者是否买单</b>、是否驻足、是否愿意购买、能接受怎样的价格，<b>再决定下一步如何进入东南亚</b>。</p>
+      <div class="cover-meta">
+        <span class="pill"><b>F1 Pit Building</b> · 新加坡滨海湾</span>
+        <span class="pill"><b>2026/11/20–22</b></span>
+        <!-- TODO-FAIR：展期已知，可按最终确认调整 -->
+      </div>
+    </div>
+    <div class="cover-art">
+      <!-- TODO-IMG：建议替换为新加坡现场/场景实拍图 -->
+      <img src="assets/cover-collage.png" alt="真实消费场景实拍">
+    </div>
+  </header>
+
+  <!-- ════════════════════════ 第01节 · 关于我们 ════════════════════════ -->
+  <section class="section" id="about">
+    <div class="sec-kicker"><span class="sec-no">01</span><span class="ln"></span><span class="en-tag">About us</span></div>
+    <h2>关于<em>我们</em></h2>
+    <p class="lead">2026 年，<strong>Global Market Accelerator</strong> 正式推出「东南亚市场加速计划」新加坡站——一场连接国际创作者、中国出海品牌与新加坡本土市场的「<strong>Global Pop-up 全球快闪</strong>」与市场孵化桥梁。以<span class="key">「文化赋能，商业共生」</span>为核心理念，帮助优秀的中国品牌以低成本、高效率切入东南亚核心市场，实现从<span class="key">「品牌触达」</span>到<span class="key">「本土深耕」</span>的跨越。</p>
+
+    <p class="lead">本次活动汇聚 <strong>320+</strong> 个来自新加坡本地及全球各地的独立设计品牌，覆盖女装 / 男装、配饰、珠宝、美妆、家居装饰、儿童服饰玩具、艺术、生活方式及精选 F&amp;B 等领域。通过现场真实购买反馈，帮助中国品牌快速验证产品在新加坡市场的接受度，为后续渠道进入与持续增长提供确定性依据。</p>
+
+    <div class="subh">为什么是我们</div>
+    <div class="adv">
+      <div class="ad"><h4>🏛️ 本地平台与生态联合</h4><p>由 Global Market Accelerator 联合新加坡本地成熟的时尚与生活方式平台及多个专业团队共同打造，连接本地品牌、消费者与商业生态支持。</p></div>
+      <div class="ad"><h4>🔗 本土生态深度链接</h4><p>联动新加坡本土买手、商业机构及社媒创作者，帮助展商在现场完成 C 端验证与 B 端资源对接。</p></div>
+      <div class="ad"><h4>✨ 严格精品定位</h4><p>面向设计师品牌、精品服饰、小众生活方式、文创香氛等品类出海的高级审美策展空间。</p></div>
+      <div class="ad"><h4>👑 高端品牌背书</h4><p>位于滨海湾核心的 F1 Pit Building 这一国际级舞台，天然赋予参展品牌高端国际化形象，为后续溢价销售奠定基础。</p></div>
+    </div>
+
+    <p class="lead" style="margin-top:20px;">此次活动精准面向国际中高消费力人群，用最挑剔的真实钱包，为你产品的竞争力投票——帮助品牌快速建立新加坡市场认知，并获取第一波订单与合作伙伴。Global Market Accelerator 将提供<strong>全流程支持</strong>：报名协调、现场执行、验证数据复盘及后续出海方案对接，让你轻松完成东南亚市场的低风险验证与起步。<span style="background-color: rgb(251, 230, 218); color: rgb(153, 44, 18); font-family: &quot;Noto Serif SC&quot;, serif; font-weight: 700;">我们诚邀你的品牌加入这国际化的新加坡站，一起以文化赋能商业，在东南亚探索新的增长曲线。</span></p>
+  </section>
+
+  <!-- ════════════════════════ 第02节 · 为什么是新加坡 / F1 Pit Building ════════════════════════ -->
+  <section class="section" id="sec-why">
+    <div class="sec-kicker"><span class="sec-no">02</span><span class="ln"></span><span class="en-tag">Why here</span></div>
+    <h2>为什么是<em>新加坡 · F1 Pit Building</em></h2>
+    <div class="lead-row">
+      <p class="lead">新加坡是东南亚人均购买力最高的市场，也是全球品牌进入东南亚的区域总部与跳板；<strong>F1 Pit Building</strong><span style="color: rgb(34, 28, 20);">坐落于滨海湾核心地带，紧邻新加坡摩天观景轮，与滨海湾金沙、滨海湾花园比邻而立。</span>这里聚集的是新加坡本地高净值家庭、创意从业者与国际游客。<strong>对中国品牌而言，新加坡不只是一个市场，更是被东南亚全区域看见的橱窗。</strong><span style="color: rgb(34, 28, 20);">活动期间，您的品牌和产品将直接面向单届三万五千人次以上的高购买力客群。</span></p><figure class="figimg side"><img src="assets/f1-pit-building.png" alt="新加坡 F1 Pit Building 与新加坡摩天观景轮">
+        <figcaption>新加坡 F1 Pit Building · 活动举办地</figcaption>
+      </figure>
+    </div>
+
+    <div class="subh">🌏 活动数据</div>
+    <div class="databand" style="grid-template-columns: 226px 209px 209px 1fr;">
+      <!-- 数据来源：主办方官方口径（访客数 / PR value / 品牌构成）；品牌数为 2025 Gifting Edition 公开报道 -->
+      <div class="stat"><div class="big">35,000<small>+ 人次</small></div><div class="cap">单届访客总量</div></div>
+      <div class="stat"><div class="big">7M<small>+</small></div><div class="cap">单届媒体传播价值 (PR Value)</div></div>
+      <div class="stat"><div class="big">85<small>%</small></div><div class="cap">新加坡本土品牌占比</div></div>
+      <div class="stat"><div class="big">320<small>+</small></div><div class="cap">参展品牌 · 200+ 独家首发</div></div>
+    </div>
+
+    <div class="why">
+      <div class="v">
+        <span class="ic">🏙️<span style="font-family: &quot;Noto Serif SC&quot;, serif; font-size: 15.5px; font-weight: 700; background-color: transparent;">滨海湾地标级场景</span></span><p>本地高消费人群、海外游客、年轻客群、品牌买手与商业伙伴同场汇聚，<span style="font-family: &quot;Noto Serif SC&quot;, serif; font-size: 13.5px; font-weight: 700; color: rgb(34, 28, 20);">单届访客超 3.5 万人次</span>。<span style="color: rgb(34, 28, 20);">对于参展品牌而言，这是一个能够获得极高曝光度和优质客群触达机会的世界级零售环境</span></p>
+      </div>
+      <div class="v">
+        <span class="ic">🎯<span style="font-family: &quot;Noto Serif SC&quot;, serif; font-size: 15.5px; font-weight: 700; background-color: transparent;">新加坡本地&amp;国际客群</span></span>
+        <p>真正验证新加坡本地人是否愿意买单，而不只是华人社群的捧场。</p>
+      </div>
+    </div>
+
+    <figure class="figimg">
+      <img src="assets/marina-bay-aerial.png" alt="新加坡滨海湾夜景与 F1 赛道">
+      <figcaption>滨海湾核心地带 · F1 Pit Building 与新加坡摩天观景轮</figcaption>
+    </figure>
+  </section>
+
+  <!-- ════════════════════════ 第03节 · 我们的不同（差异化）════════════════════════ -->
+  <section class="section">
+    <div class="sec-kicker"><span class="sec-no">03</span><span class="ln"></span><span class="en-tag">Why us</span></div>
+    <h2>我们的<em>不同</em></h2><div><em>一套完整的市场验证和出海落地系统</em></div>
+
+    <div class="diff">
+      <div class="d">
+        <span class="ic">🛒</span>
+        <h3>进入真实本地消费场景</h3>
+        <p>很多海外活动是"中国品牌→中国主办方→华人消费者→华人社群"；本项目让你直接面对<b>新加坡本地消费者、家庭客群、年轻群体、本地买手与渠道商</b>，验证的是本地人是否买单。</p>
+      </div>
+      <div class="d">
+        <span class="ic">🧭</span>
+        <h3>带走可决策的洞察</h3>
+        <p>不只看"今天卖了多少"。你会得到<b>消费者 / 产品 / 价格 / 市场</b>四类验证与一份深度<b>市场验证报告</b>，了解"为什么卖得出去、如何在海外持续卖下去"。</p>
+      </div>
+      <div class="d">
+        <span class="ic">🤝</span>
+        <h3>连接本地资源</h3>
+        <p>项目期间有机会接触<b>本地零售/买手店、本地品牌联名、媒体与 KOL、采购与渠道合作</b>。</p>
+      </div>
+      <div class="d">
+        <span class="ic">🚀</span>
+        <h3>出海全周期陪跑</h3>
+        <p>从<b>验证 → 进入 → 扩张</b>三阶段成体系陪你走，不止于一次展会，而是帮你把东南亚市场真正做起来。</p></div></div>
+  </section>
+
+  <!-- ════════════════════════ 第04节 · 你将获得什么（四类验证）════════════════════════ -->
+  <section class="section">
+    <div class="sec-kicker"><span class="sec-no">04</span><span class="ln"></span><span class="en-tag">What you get</span></div>
+    <h2>你将获得</h2>
+    <p class="lead">让产品直接面对真实市场，带回能拍板的一手答案，而不只是销售额。</p>
+
+    <div class="after-grid">
+      <div class="c">
+        <div class="no">01</div>
+        <h3>真实消费者验证</h3>
+        <p>谁会购买、为什么购买、为什么不购买。</p>
+      </div>
+      <div class="c">
+        <div class="no">02</div>
+        <h3>真实产品验证</h3>
+        <p>产品接受度、SKU 表现、包装与卖点反馈。</p>
+      </div>
+      <div class="c">
+        <div class="no">03</div>
+        <h3>真实价格验证</h3>
+        <p>消费者可接受的价格区间、产品溢价能力、竞争情况。</p>
+      </div>
+      <div class="c">
+        <div class="no">04</div>
+        <h3>真实市场洞察</h3>
+        <p>市场趋势、竞品表现、品类机会与进入路径。</p>
+      </div>
+    </div>
+
+    <div class="paid-banner" style="margin-top:16px;">不只是卖货：项目期间同步关注 品牌曝光 · 商业机会 · 本地资源连接——有没有人记住你、关注你、想和你合作。</div>
+
+    <div class="gma">
+      <span class="g-h">★ GMA 专属｜资源与机会</span>
+      <span class="g-en">GMA Exclusive · Resources &amp; Opportunities</span>
+      <div class="g-cards">
+        <div class="gc">
+          <div class="gc-no">01</div>
+          <h4>GMA Pre-Market Exchange<br>中外品牌交流会</h4>
+          <p>长期资源链接与品牌交流平台，促进中外品牌<b>经验交流、联合曝光、渠道互通</b>与潜在合作。</p>
+        </div>
+        <div class="gc">
+          <div class="gc-no">02</div>
+          <h4>进入 GMA 品牌资源库</h4>
+          <p>进入 GMA 资源库；如后续出现匹配的<b>渠道、合作或市场机会</b>，将持续反馈并协助对接。</p>
+        </div>
+        <div class="gc">
+          <div class="gc-no">03</div>
+          <h4>后续市场进入推荐</h4>
+          <p>对具备进一步发展潜力的品牌，可衔接 <b>GMA ENTER / GROW</b> 服务，继续推进本地化与长期发展。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════ 第05节 · 项目包含什么 / 怎么执行 ════════════════════════ -->
+  <section class="section">
+    <div class="sec-kicker"><span class="sec-no">05</span><span class="ln"></span><span class="en-tag">How it works</span></div>
+    <h2>项目包含什么</h2>
+
+    <div class="flow">
+      <div class="stage">
+        <div class="ph">展前</div>
+        <h3>准备 · 预热宣传</h3>
+        <ul>
+          <li>产品评估/本地化卖点梳理&amp;定价&nbsp;</li><li>物流辅助、展前预热宣传</li>
+          <li>行前准备、当地电话卡等攻略</li><li style="color: rgb(74, 64, 52);">接机 + 提前踩点、辅助布展</li>
+        </ul>
+      </div>
+      <div class="stage">
+        <div class="ph">展中</div>
+        <h3>出摊 · 销售 · 调研</h3>
+        <ul>
+          <li><div data-page-id="P8VmdD43Ood6ecxBf3sc6mw6nzb" data-lark-html-role="root" data-docx-has-block-data="false"><div class=" old-record-id-BsXYdxmCZo62pBx3rJQcKzh8nu7">3天公众零售活动</div></div></li>
+          <li>当地媒体曝光机会、现场互动活动</li><li><div data-page-id="P8VmdD43Ood6ecxBf3sc6mw6nzb" data-lark-html-role="root" data-docx-has-block-data="false"><div class=" old-record-id-JZyadBmu2om0ZcxJQgSc5rhKnJf">专业翻译协助沟通</div></div></li>
+          <li>消费者行为观察与调研</li>
+        </ul>
+      </div>
+      <div class="stage">
+        <div class="ph">展后</div>
+        <h3>市场报告 · 本地资源链接</h3>
+        <ul>
+          <li>市场验证报告与结算</li>
+          <li>本地走访、商圈考察</li>
+          <li>本地资源连接与下一步建议</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="star">
+      <span class="lab">★ 消费者调研</span>
+      <p>专人<b>驻场观察</b>，记录消费者在摊位前的<b>停留时长</b>、触摸产品时的<b>反应</b>、对定价的<b>真实反馈</b>，并完成<b>结构化调整</b>，展后交付<b>市场验证方案</b><span style="background-color: rgb(239, 228, 210); font-size: 12.5px;">（包括消费者画像 / 热销 SKU / 产品反馈 / 定价反馈 / 市场机会 / 下一步建议等）</span>，这是难以从国内远程获取的一手市场洞察。</p></div>
+
+    <p class="lead" style="margin-top:30px;">三阶段全流程我们具体为您做：</p>
+    <div class="phases">
+
+      <!-- 展前 -->
+      <div class="phase p-pre">
+        <div class="ph-h"><span class="ph-ic">📥</span><span class="ph-t">展前</span><span class="ph-en">Before the fair</span></div>
+        <ul class="ph-list">
+          <li><b>展前合规与入围：</b>新加坡准入与产品合规排查，独家绿色通道，快速审核流程。</li>
+          <li><b>产品出海本地化：</b>卖点梳理、SKU 搭配、新加坡本地化定价建议（新币定价）。</li>
+          <li><b>跨境落地全套指引：</b>提供新加坡出行攻略、展品跨国运输清关指引、布展指引。</li>
+          <li><b>宣传矩阵前置曝光：</b>对接官方媒体与到场媒体宣传、达人 KOL 资源，提高品牌展前露出。</li>
+          <li><b>商贸资源提前匹配：</b>帮品牌匹配对口采购商名单，入选后预先排定现场一对一洽谈时段。</li>
+        </ul>
+      </div>
+
+      <!-- 展中 -->
+      <div class="phase p-mid">
+        <div class="ph-h"><span class="ph-ic">⚡</span><span class="ph-t">展中</span><span class="ph-en">During the fair</span></div>
+        <ul class="ph-list">
+          <li><b>全阶段参与：</b>3 天公众零售活动，配备专员现场收集一手消费者反馈。</li>
+          <li><b>媒体曝光：</b>对接现场主流媒体与当地头部 KOL 免费曝光。</li>
+          <li><b>专业翻译驻场协助：</b>配备懂当地语言的专业翻译协助沟通，消除跨国语言壁垒。</li>
+          <li><b>互动活动申请：</b>协助品牌申请现场的「匠人工坊」「新品发布」或「产品品鉴」等线下交互活动。</li>
+        </ul>
+        <div class="live">
+          <span class="lv-lab">★ 创意现场发生</span>
+          <span class="lv-en">Where Creativity Comes to Life</span>
+          <p>品牌除了展示与产品销售，活动现场还将呈现丰富的设计师<b>现场创作（Live Creation）</b>与<b>互动共创（Co-Creation）</b>内容。品牌设计师不仅与世界各地品牌方设计师交流创作，观众也有机会近距离见证创作过程、与设计师直接交流，参与定制体验或共同完成作品创作，感受创意从灵感到成品的诞生过程——让品牌不仅<b>被看见</b>，更被<b>体验、被记住、被分享</b>。</p>
+        </div>
+      </div>
+
+      <!-- 展后 -->
+      <div class="phase p-post">
+        <div class="ph-h"><span class="ph-ic">🚀</span><span class="ph-t">展后</span><span class="ph-en">After the fair</span></div>
+        <ul class="ph-list">
+          <li><b>一手市场调研报告：</b>交付现场消费者的价格敏感度、产品偏好等一手数据及分析报告。</li>
+          <li><b>本土生态资源对接：</b>顺畅对接新加坡本地的商圈、优质供应链及长期零售渠道。</li>
+          <li><b>后续巡回优先权：</b>表现优质的品牌可获得后续东南亚巡回展会（如曼谷站）的优先入驻资格。</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════ 第06节 · 价格表 ════════════════════════ -->
+  <section class="section">
+    <div class="sec-kicker"><span class="sec-no">06</span><span class="ln"></span><span class="en-tag">Pricing</span></div>
+    <h2>价格<em>表</em></h2>
+    <p class="lead">全档位配套服务完全一致，仅<strong>摊位基础费 / 展位面积</strong>不同。</p>
+
+    <div class="cmp-scroll">
+      <table class="cmp pricetbl" style="table-layout: fixed;">
+        <thead>
+          <tr>
+            <th style="width: 70px;">项目</th>
+            <th class="w1c tierh" style="width: 187px;">基础版<small>低门槛测款首选</small></th>
+            <th class="w2c tierh rec" style="width: 171px;">优选版<small>多数品牌初次首选</small><span class="pick">入门首选</span></th>
+            <th class="w3c tierh" style="width: 252px;">尊享版<small>品牌视觉呈现</small></th>
+            <th class="w4c tierh" style="width: 167px;">定制版<small>品牌定制需求</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>适合对象</th>
+            <td colspan="2">初次试水东南亚市场、SKU 数量较少、预算有限，希望以最低前期投入门槛快速测试产品海外市场反应的独立主理人或中小型品牌，以及初创品牌。</td>
+            <td>多 SKU、大件产品（如服装、精品家居）、对现场视觉陈列有较高品位要求，希望在新加坡树立高端国际化品牌形象的品牌。或需较大的展位空间可容纳试衣间、模特展示区及更完整的产品陈列，帮助品牌提高购物体验。</td>
+            <td>需大展位面积的品牌</td>
+          </tr>
+          <tr>
+            <th>展位面积</th>
+            <td><span class="fee-big">4㎡ <small>(2m×2m)</small></span></td>
+            <td><span class="fee-big">4㎡ <small>(2m×2m)</small></span></td>
+            <td><span class="fee-big">12㎡ <small>(4m×3m)</small></span></td>
+            <td><span class="fee-big">24㎡ – 50㎡+</span></td>
+          </tr>
+          <tr>
+            <th>销售佣金</th>
+            <td><span class="comm-y">19%</span><br><span style="font-size:12px;color:var(--muted)">品牌现场产生的销售额将额外扣除 19% 销售佣金</span></td>
+            <td><span class="comm-n">无</span></td>
+            <td><span class="comm-n">无</span></td>
+            <td><span class="comm-n">无</span></td>
+          </tr>
+          <tr class="row-price">
+            <th>价格</th>
+            <td><span class="pr-old">原价 30,000</span><span class="pr-now"><small>专享优惠价</small></span><span class="pr-now">RMB 21,000</span></td>
+            <td><span class="pr-old">原价 35,000</span><span class="pr-now"><small>专享优惠价</small></span><span class="pr-now">RMB 25,000</span></td>
+            <td><span class="pr-old">原价 45,000</span><span class="pr-now"><small>专享优惠价</small></span><span class="pr-now">RMB 37,000</span></td>
+            <td><span class="pr-quote">根据定制展位面积</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="promo">
+      <div class="promo-sticker">🎉</div>
+      <div class="pt"><span class="tg">🎁 限时优惠</span>双重限时加速补贴 🔥</div>
+      <p class="intro">为支持新锐品牌迈出全球化第一步，凡在 <b>⏰ 9 月前</b>审核通过并确定下单的品牌，可叠加双重限时加速补贴：</p>
+      <ul>
+        <li><b>🐦 福利一：</b>早鸟席位立减 <b>1,000 元</b></li>
+        <li><b>📦 福利二：</b>500 元跨境物流专项补贴；500 元布展专项补贴</li>
+      </ul>
+    </div>
+    <!-- 完整套餐价/成本/毛利见 定价分析.docx（内部，禁止外发） -->
+  </section>
+
+  <!-- ════════════════════════ 第07节 · 增值服务 ════════════════════════ -->
+  <section class="section">
+    <div class="sec-kicker"><span class="sec-no">07</span><span class="ln"></span><span class="en-tag">Add-ons</span></div>
+    <h2>增值<em>服务</em></h2><div class="paid-banner">市场验证之后想继续往前走，可单独加购以下增长服务。</div>
+
+    <div class="after-grid">
+      <div class="c">
+        <div class="no">01</div>
+        <h3>线上独立站搭建</h3>
+        <p>帮你搭建出海独立站，把线下验证过的产品搬到线上持续卖。</p>
+      </div>
+      <div class="c">
+        <div class="no">02</div>
+        <h3>本地化转化</h3>
+        <p>把展会期间的本地洞察，转化成真正落地的合作机会：</p>
+        <ul class="conv">
+          <li>当地品牌联名合作</li>
+          <li>本地零售/买手店渠道对接</li>
+          <li>本地化营销</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════ 第08节 · 选展标准 + 保障 ════════════════════════ -->
+  <section class="section">
+    <div class="sec-kicker"><span class="sec-no">08</span><span class="ln"></span><span class="en-tag">Trust &amp; how we pick</span></div>
+    <h2>具体信息 &amp; <em>申请流程</em></h2><div class="corepos">
+      <p>中国优质品牌与文化资产出海东南亚的<b>「全球快闪（Global Pop-up）」孵化第一站</b>。</p>
+    </div>
+
+    <!-- 基础信息 -->
+    <div class="subh">基础信息</div>
+    <div class="kv">
+      <div class="item">
+        <div class="k">展会全称</div>
+        <div class="v"><b>2026 亚洲风尚展 · 新加坡站</b><br>Singapore Gifting Edition 2026</div>
+      </div>
+      <div class="item">
+        <div class="k">举办地点</div>
+        <div class="v"><b>新加坡 F1 Pit Building</b><br><span style="font-size:12.5px;color:var(--muted)">1 Republic Boulevard, Singapore 038975</span></div>
+      </div>
+      <div class="item">
+        <div class="k">活动时间</div>
+        <div class="v"><b>2026年11月18日 – 11月23日</b>（含搭建撤展，公众开放 11/20–22）</div>
+      </div>
+      <div class="item">
+        <div class="k">展会规模</div>
+        <div class="v">精选 <span class="big">320</span>+ 家设计品牌 · <b>85%</b> 新加坡本土品牌 / <b>15%</b> 国际品牌</div>
+      </div>
+    </div>
+
+    <!-- 场馆卖点 -->
+    <div class="spotlight">
+      <div class="s">
+        <h4>📍 顶流地标，自带曝光</h4>
+        <p>F1 Pit Building 位于滨海湾核心，是 F1 新加坡大奖赛的维修站与媒体中心；紧邻新加坡摩天观景轮，与滨海湾金沙、滨海湾花园隔湾相望，视野可将滨海湾天际线尽收眼底。活动期间，你的品牌将直接面向<b>单届 3.5 万人次以上</b>的高购买力客群。</p>
+      </div>
+      <div class="s">
+        <h4>🎯 精准客群契合</h4>
+        <p>到场客流在审美、客单价承受力，以及对中国新锐品牌和传统文化资产（文创、手工艺、创新生活方式、新消费品）的接受度上，与出海品牌的破圈需求<b>高度匹配</b>。</p>
+      </div>
+    </div>
+    <figure class="figimg">
+      <img src="assets/marina-bay-sands.png" alt="滨海湾金沙与艺术科学博物馆">
+      <figcaption>毗邻地标 · 滨海湾金沙与艺术科学博物馆，同处滨海湾核心步行圈</figcaption>
+    </figure>
+
+    <!-- 活动日程 -->
+    <div class="subh">活动日程</div>
+    <div class="sched">
+      <div class="day">
+        <div class="d-date">11月18日（周三）· 进场搭建</div>
+        <div class="d-body">参展商进场搭建（Vendor set-up）。</div>
+      </div>
+      <div class="day">
+        <div class="d-date">11月19日（周四）· 商贸 + 闭门专场</div>
+        <div class="d-body">
+          <div class="slot"><b>Private Media, Trade &amp; VIP Preview</b>：媒体、商贸买家与 VIP 闭门预览，仅凭专属邀请函入场，定向对接渠道商与 KOL，锁定高端曝光。<span style="font-size:12.5px;color:var(--muted)">（具体时段以主办方最终公布为准）</span></div>
+        </div>
+      </div>
+      <div class="day">
+        <div class="d-date">11月20–22日（周五至周日）· 公众开放日</div>
+        <div class="d-body">连续 3 天面向公众开放。<span style="font-size:12.5px;color:var(--muted)">（每日开放时间以主办方最终公布为准）</span></div>
+      </div>
+      <div class="day">
+        <div class="d-date">11月22–23日（周日、周一）· 撤展</div>
+        <div class="d-body">末日闭馆后参展商统一撤展（Vendor tear-down）。</div>
+      </div>
+    </div>
+
+    <!-- 到场人群画像 -->
+    <div class="subh">到场人群画像</div>
+    <div class="why">
+      <div class="v">
+        <span class="ic">🛍️</span>
+        <h3>终端消费客群</h3>
+        <p>高预算城市白领、创意从业者、双收入家庭、注重设计与可持续理念的年轻家庭，跨境旅游与文化体验消费意愿强。</p>
+      </div>
+      <div class="v">
+        <span class="ic">🤝</span>
+        <h3>B2B 渠道客群</h3>
+        <p>新加坡本地精品集合店、零售商、区域分销商、独立买手，以及东南亚和国际采购方。</p>
+      </div>
+      <div class="v">
+        <span class="ic">📣</span>
+        <h3>宣传流量客群</h3>
+        <p>新加坡本地时尚媒体、生活方式 KOL、高净值私域 VIP 客户。</p>
+      </div>
+    </div>
+
+    <!-- 申请流程 -->
+    <div class="subh">申请流程</div>
+    <p class="lead">为保证整体展出的品类调性与现场质量，我们采取「严选制」准入流程。</p>
+    <div class="proc">
+      <div class="step">
+        <h4>品牌资质初审报名</h4>
+        <ul>
+          <li>提交品牌资料：品牌介绍、产品实拍图、主营品类、品牌定位、过往线下 / 线上销售案例；</li>
+          <li>根据原创设计品牌筛选标准，审核品牌调性；</li>
+          <li>申请通道已开放，名额有限。</li>
+        </ul>
+      </div>
+      <div class="step">
+        <h4>展位确认与优惠锁定</h4>
+        <ul>
+          <li>审核通过后，选定展位规格（2m×2m 含佣金 / 2m×2m 无佣金 / 4m×3m 大展位，支持特殊面积定制）；</li>
+          <li><b>9 月前确定下单 · 专属双重福利</b>。</li><li style="padding: 0px 0px 0px 22px; color: rgb(153, 44, 18); line-height: 1.5;"><span style="color: rgb(122, 42, 18); font-weight: 700;">福利一：</span>早鸟席位立减 <span style="color: rgb(122, 42, 18); font-weight: 700;">1,000 元</span></li><li style="padding: 0px 0px 0px 22px; color: rgb(153, 44, 18); line-height: 1.5;"><span style="color: rgb(122, 42, 18); font-weight: 700;">福利二：</span>500 元跨境物流专项补贴；500 元布展专项补贴</li>
+        </ul>
+      </div>
+      <div class="step">
+        <h4>签约锁定档期</h4>
+        <ul>
+          <li>签订参展合作协议，支付对应款项，锁定档期与展位空间</li></ul></div></div>
+  </section>
+
+  <!-- ════════════════════════ 第09节 · 常见问题 ════════════════════════ -->
+  <section class="section">
+    <div class="sec-kicker"><span class="sec-no">09</span><span class="ln"></span><span class="en-tag">FAQ</span></div>
+    <h2>常见问题</h2>
+    <div class="faq">
+      <div class="q"><h3>语言不通怎么办？</h3><p>新加坡通行英语与华语，本身就是沟通门槛最低的东南亚市场；我们同样配备驻场销售与翻译支持，沟通无障碍。</p></div><div class="q"><h3>机票酒店、物流布展包含吗？</h3><p>国际机票与酒店由品牌自理；会协助对接物流公司和布展物品租借，物流费用、布展物品/费用自理。</p></div>
+      <div class="q"><h3>钱什么时候结算？</h3><p>展会结束对账后按10个工作日内结算。<!-- TODO-PRICE：补充具体结算周期，如展后 X 个工作日 --></p></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════ 联系我们 / CTA ════════════════════════ -->
+  <section class="cta">
+    <h2>先去新加坡，<em>验证一下？</em></h2>
+
+    <div class="offer">
+      <div class="ot">🎁 9 月前 · 特惠锁定</div>
+      <div class="lead2">凡在 9 月前确定并签订协议的品牌，可立刻叠加享受双重限时福利：</div>
+      <ul>
+        <li>💰 <b>早鸟福利：</b>直接立减 <b>1,000 元</b>；</li>
+        <li>📦 <b>其他福利：</b>额外赠送 <b>500元</b>国际物流专项补贴+<b>500元</b>布展补贴。</li>
+      </ul>
+    </div>
+
+    <div class="book-tt">📥 开启你的东南亚市场验证</div>
+    <ul class="book-pts">
+      <li>👥 <b>专属名额：</b>本次新加坡站中国品牌席位极其有限，招满即止。</li>
+      <li>📥&nbsp;<b><b>扫码</b>报名：</b>扫码联系我们，发送品牌介绍，填写报名表。</li>
+    </ul>
+
+    <div class="qr-note">微信扫码添加（添加时请备注 <b>【新加坡站 + 品牌名】</b>）：</div>
+    <div class="qrs">
+      <div class="qr-card">
+        <img src="assets/wechat-jade.jpg" alt="Jade 微信二维码">
+        <div class="nm">Jade</div><div class="rg">新加坡</div>
+      </div>
+      <div class="qr-card">
+        <img src="assets/wechat-carrie.jpg" alt="Carrie 微信二维码">
+        <div class="nm">Carrie</div><div class="rg">Iceland</div>
+      </div>
+    </div>
+
+    <div class="emails">📧 邮箱　<b>Jade</b>&nbsp;1205226717@qq.com　·　<b>Carrie</b>&nbsp;yt1253082426@163.com</div>
+
+    <div class="brandline">Global Market Accelerator · 您的出海增长伙伴</div>
+  </section>
+
+  <footer>
+    <!-- TODO-BRAND -->
+    Global Market Accelerator · 新加坡站
+  </footer>
+
+</div>
+
+<script>
+  // ===== 在线编辑文字 =====
+  // 用 http://127.0.0.1 (本地编辑保存服务) 打开 → 编辑后自动写回 .html 文件
+  // 用 file:// 直接打开 → 退回浏览器本地缓存（localStorage），可点「导出 HTML」
+  (function(){
+    var KEY = 'sgfair_edit_v1';
+    var SERVER = (location.protocol === 'http:' || location.protocol === 'https:');
+    var wrap = document.querySelector('.wrap');
+    var btnEdit = document.getElementById('btnEdit');
+    var btnReset = document.getElementById('btnReset');
+    var editing = false;
+
+    // 顶栏保存状态指示
+    var stat = document.createElement('span');
+    stat.style.cssText = 'font-size:12px;align-self:center;color:var(--muted);min-width:74px;text-align:right;';
+    btnEdit.parentNode.insertBefore(stat, btnReset);
+    function pad(n){return (n<10?'0':'')+n;}
+    function setStat(s, msg){
+      if (!SERVER){ stat.textContent=''; return; }
+      if (s==='saving') stat.textContent='保存中…';
+      else if (s==='ok'){ var d=new Date(); stat.textContent='✓ 已保存 '+pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds()); }
+      else if (s==='err') stat.textContent='✗ 保存失败'+(msg?'：'+msg:'');
+      else stat.textContent='● 自动保存已开';
+    }
+
+    // file:// 模式才从浏览器缓存恢复（服务器模式下文件本身就是最新版）
+    if (!SERVER){
+      try { var s=localStorage.getItem(KEY); if(s){ wrap.innerHTML=s; btnReset.style.display=''; } } catch(e){}
+    } else {
+      btnReset.style.display='none';
+      setStat('idle');
+    }
+
+    // 把当前页面（含编辑内容）序列化成完整 HTML
+    function buildHTML(){
+      var clone = document.documentElement.cloneNode(true);
+      var w = clone.querySelector('.wrap');
+      if (w){ w.innerHTML = wrap.innerHTML; w.removeAttribute('contenteditable'); }
+      var b = clone.querySelector('body'); if (b) b.classList.remove('editing');
+      var st = clone.querySelector('span[style*="min-width:74px"]'); if (st && st.parentNode) st.parentNode.removeChild(st);
+      // 拖拽把手不写入文件（列宽 inline 样式会保留）
+      var rs = clone.querySelectorAll('.col-resizer');
+      for (var i=0;i<rs.length;i++){ if (rs[i].parentNode) rs[i].parentNode.removeChild(rs[i]); }
+      return '<!DOCTYPE html>\n' + clone.outerHTML;
+    }
+
+    var saveTimer=null, lastSaved=null;
+    function serverSave(){
+      var html = buildHTML();
+      if (html === lastSaved) return;
+      setStat('saving');
+      fetch('/save?file=' + encodeURIComponent(location.pathname),
+            {method:'POST', headers:{'Content-Type':'text/html; charset=utf-8'}, body: html})
+        .then(function(r){ return r.json(); })
+        .then(function(j){ if(j && j.ok){ lastSaved=html; setStat('ok'); } else setStat('err', j&&j.msg); })
+        .catch(function(){ setStat('err','服务未启动'); });
+    }
+    function scheduleSave(){ clearTimeout(saveTimer); saveTimer=setTimeout(serverSave, 1200); }
+    function localSave(){ try{ localStorage.setItem(KEY, wrap.innerHTML); btnReset.style.display=''; }catch(e){} }
+
+    window.toggleEdit = function(){
+      editing = !editing;
+      wrap.setAttribute('contenteditable', editing ? 'true' : 'false');
+      document.body.classList.toggle('editing', editing);
+      btnEdit.textContent = editing ? '✅ 完成编辑' : '✏️ 编辑文字';
+      btnEdit.classList.toggle('on', editing);
+      if (!editing){ if (SERVER){ clearTimeout(saveTimer); serverSave(); } else localSave(); }
+    };
+
+    window.resetEdit = function(){
+      if (!confirm('确定还原为原始文案？你在本浏览器做的所有改动会清空。')) return;
+      try { localStorage.removeItem(KEY); } catch(e){}
+      location.reload();
+    };
+
+    wrap.addEventListener('input', function(){
+      if (!editing) return;
+      if (SERVER) scheduleSave(); else localSave();
+    });
+    window.addEventListener('beforeunload', function(){
+      if (!editing) return;
+      if (SERVER){
+        try { navigator.sendBeacon('/save?file=' + encodeURIComponent(location.pathname),
+              new Blob([buildHTML()], {type:'text/html;charset=utf-8'})); } catch(e){}
+      } else localSave();
+    });
+
+    // 导出当前编辑后的 HTML（留档 / 备份用）
+    window.exportEdited = function(){
+      var html = buildHTML();
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([html], {type:'text/html;charset=utf-8'}));
+      a.download = (location.pathname.split('/').pop() || 'index') .replace('.html','') + '_edited.html';
+      document.body.appendChild(a); a.click(); a.remove();
+    };
+
+    // 价格表：列宽可拖拽调整（拖动后自动保存到文件）
+    function setupColResize(){
+      var table = document.querySelector('.pricetbl');
+      if (!table) return;
+      var old = table.querySelectorAll('.col-resizer');
+      for (var k=0;k<old.length;k++) old[k].remove();
+      var ths = [].slice.call(table.querySelectorAll('thead th'));
+      if (table.style.tableLayout !== 'fixed'){
+        ths.forEach(function(th){ th.style.width = th.offsetWidth + 'px'; });
+        table.style.tableLayout = 'fixed';
+      }
+      ths.forEach(function(th){
+        var h = document.createElement('span');
+        h.className = 'col-resizer';
+        h.setAttribute('contenteditable','false');
+        th.appendChild(h);
+        h.addEventListener('mousedown', function(e){
+          e.preventDefault(); e.stopPropagation();
+          var startX = e.pageX, startW = th.offsetWidth;
+          document.body.classList.add('col-resizing');
+          function move(ev){ th.style.width = Math.max(60, startW + (ev.pageX - startX)) + 'px'; }
+          function up(){
+            document.removeEventListener('mousemove', move);
+            document.removeEventListener('mouseup', up);
+            document.body.classList.remove('col-resizing');
+            if (SERVER) scheduleSave();
+          }
+          document.addEventListener('mousemove', move);
+          document.addEventListener('mouseup', up);
+        });
+      });
+    }
+    setupColResize();
+
+    // 活动数据条：4 列可拖拽调宽（最后一列自适应填满）
+    function setupBandResize(){
+      var band = document.querySelector('.databand');
+      if (!band) return;
+      var old = band.querySelectorAll('.col-resizer');
+      for (var k=0;k<old.length;k++) old[k].remove();
+      var cells = [].slice.call(band.children).filter(function(c){ return c.classList && c.classList.contains('stat'); });
+      if (cells.length < 2) return;
+      // 仅宽屏启用；首次把当前列宽固化（除末列用 1fr 自适应）
+      if (window.innerWidth > 680 && (!band.style.gridTemplateColumns || band.style.gridTemplateColumns.indexOf('px') === -1)){
+        var tpl = cells.map(function(c, i){ return i === cells.length-1 ? '1fr' : c.offsetWidth + 'px'; });
+        band.style.gridTemplateColumns = tpl.join(' ');
+      }
+      cells.forEach(function(cell, i){
+        if (i === cells.length-1) return;          // 末列不放把手
+        var h = document.createElement('span');
+        h.className = 'col-resizer';
+        h.setAttribute('contenteditable','false');
+        cell.appendChild(h);
+        h.addEventListener('mousedown', function(e){
+          e.preventDefault(); e.stopPropagation();
+          var startX = e.pageX;
+          var cols = band.style.gridTemplateColumns.split(/\s+/);
+          var startW = parseFloat(cols[i]) || cell.offsetWidth;
+          document.body.classList.add('col-resizing');
+          function move(ev){
+            cols[i] = Math.max(60, startW + (ev.pageX - startX)) + 'px';
+            band.style.gridTemplateColumns = cols.join(' ');
+          }
+          function up(){
+            document.removeEventListener('mousemove', move);
+            document.removeEventListener('mouseup', up);
+            document.body.classList.remove('col-resizing');
+            if (SERVER) scheduleSave();
+          }
+          document.addEventListener('mousemove', move);
+          document.addEventListener('mouseup', up);
+        });
+      });
+    }
+    setupBandResize();
+  })();
+</script>
+
+
+<a id="bottomBar" style="position: fixed; bottom: -40px; left: 0px; z-index: 9999; transform: translateX(-50%); background-color: transparent; border-radius: 5px 5px 0px 0px; opacity: 0.3; padding: 5px; transition: 0.3s; cursor: pointer; max-height: 100px; max-width: 45px;"><img src="chrome-extension://kobncfkmjelbefaoohoblamnbackjggk/icon/icon_32.png" style="width: 32px; height: 32px;"></a><plasmo-csui id="aitdk-csui"></plasmo-csui><a id="bottomBar" style="position: fixed; bottom: -40px; left: 0px; z-index: 9999; transform: translateX(-50%); background-color: transparent; border-radius: 5px 5px 0px 0px; opacity: 0.3; padding: 5px; transition: 0.3s; cursor: pointer; max-height: 100px; max-width: 45px;"><img src="chrome-extension://kobncfkmjelbefaoohoblamnbackjggk/icon/icon_32.png" style="width: 32px; height: 32px;"></a><plasmo-csui id="aitdk-csui"></plasmo-csui><a id="bottomBar" style="position: fixed; bottom: -40px; left: 0px; z-index: 9999; transform: translateX(-50%); background-color: transparent; border-radius: 5px 5px 0px 0px; opacity: 0.3; padding: 5px; transition: 0.3s; cursor: pointer; max-height: 100px; max-width: 45px;"><img src="chrome-extension://kobncfkmjelbefaoohoblamnbackjggk/icon/icon_32.png" style="width: 32px; height: 32px;"></a><plasmo-csui id="aitdk-csui"></plasmo-csui><a id="bottomBar" style="position: fixed; bottom: -40px; left: 0px; z-index: 9999; transform: translateX(-50%); background-color: transparent; border-radius: 5px 5px 0px 0px; opacity: 0.3; padding: 5px; transition: 0.3s; cursor: pointer; max-height: 100px; max-width: 45px;"><img src="chrome-extension://kobncfkmjelbefaoohoblamnbackjggk/icon/icon_32.png" style="width: 32px; height: 32px;"></a><plasmo-csui id="aitdk-csui"></plasmo-csui><a id="bottomBar" style="position: fixed; bottom: -40px; left: 0px; z-index: 9999; transform: translateX(-50%); background-color: transparent; border-radius: 5px 5px 0px 0px; opacity: 0.3; padding: 5px; transition: 0.3s; cursor: pointer; max-height: 100px; max-width: 45px;"><img src="chrome-extension://kobncfkmjelbefaoohoblamnbackjggk/icon/icon_32.png" style="width: 32px; height: 32px;"></a><plasmo-csui id="aitdk-csui"></plasmo-csui><a id="bottomBar" style="position: fixed; bottom: -40px; left: 0px; z-index: 9999; transform: translateX(-50%); background-color: transparent; border-radius: 5px 5px 0px 0px; opacity: 0.3; padding: 5px; transition: 0.3s; cursor: pointer; max-height: 100px; max-width: 45px;"><img src="chrome-extension://kobncfkmjelbefaoohoblamnbackjggk/icon/icon_32.png" style="width: 32px; height: 32px;"></a></body><plasmo-csui id="aitdk-csui"></plasmo-csui></html>
