@@ -609,14 +609,25 @@
   }
 
   /* ===== 打印 / 导出 PDF ===== */
+  /* 目标：PDF 与网页 1:1 一致。做法是打印时仍按 880px 的网页宽度排版，
+     再用 zoom 把整页等比缩到 A4 幅面 —— 换行、分栏、列宽都不会重排。 */
   @media print{
-    @page{size:A4 portrait; margin:14mm 12mm;}
+    @page{size:A4 portrait; margin:10mm;}
     html,body{background:#fff !important;}
+    body{
+      zoom:.8;                       /* 190mm(=718px) ÷ .8 ≈ 897px ≥ 880px 网页宽 */
+      background-image:none !important; background-attachment:initial !important;
+    }
     body::before{display:none;}
     .topbar,.edit-tip{display:none !important;}
-    body.editing .wrap{outline:none !important;}
-    .wrap{max-width:100%; padding:0;}
+    body.editing .wrap{outline:none !important; }
+    body.editing .wrap *:focus{outline:none !important;}
+    .col-resizer{display:none !important;}
+    /* 保持与屏幕完全相同的容器宽度（880 = 836 内容 + 22×2 内边距）*/
+    .wrap{width:880px !important; max-width:880px !important; margin:0 auto !important;
+      padding:0 22px 0 !important;}
     *{-webkit-print-color-adjust:exact !important; print-color-adjust:exact !important;}
+    img{max-width:100%;}
     .section{padding:20px 0 6px;}
     .cover{padding:10px 0 24px;}
     .way{overflow:visible;}
@@ -1311,6 +1322,54 @@
       });
     }
     setupBandResize();
+
+    // ===== 打印/导出 PDF 前：把"拖拽固化的像素列宽"换成等比列宽 =====
+    // 数据条和价格表的列宽是拖拽后写死的 px（如 226px 209px…），
+    // 打印时容器宽度略有出入就会溢出被裁掉（就是"排版变乱"的原因）。
+    // 这里在 beforeprint 把它们按当前比例转成 fr / %，打印完再还原，
+    // 比例与屏幕上完全一致，且永远不会超出纸张宽度。
+    function px2rel(){
+      var band = document.querySelector('.databand');
+      if (band && /px/.test(band.style.gridTemplateColumns || '')){
+        var cells = [].slice.call(band.querySelectorAll('.stat'));
+        band.setAttribute('data-pxcols', band.style.gridTemplateColumns);
+        band.style.gridTemplateColumns = cells.map(function(c){
+          return (c.getBoundingClientRect().width || 1).toFixed(3) + 'fr';
+        }).join(' ');
+      }
+      var t = document.querySelector('.pricetbl');
+      if (t){
+        var ths = [].slice.call(t.querySelectorAll('thead th'));
+        var tot = ths.reduce(function(a, th){ return a + th.getBoundingClientRect().width; }, 0);
+        if (tot > 0) ths.forEach(function(th){
+          th.setAttribute('data-pxw', th.style.width || '');
+          th.style.width = (th.getBoundingClientRect().width / tot * 100).toFixed(4) + '%';
+        });
+      }
+    }
+    function rel2px(){
+      var band = document.querySelector('.databand');
+      if (band && band.hasAttribute('data-pxcols')){
+        band.style.gridTemplateColumns = band.getAttribute('data-pxcols');
+        band.removeAttribute('data-pxcols');
+      }
+      var t = document.querySelector('.pricetbl');
+      if (t) [].slice.call(t.querySelectorAll('thead th')).forEach(function(th){
+        if (th.hasAttribute('data-pxw')){
+          th.style.width = th.getAttribute('data-pxw');
+          th.removeAttribute('data-pxw');
+        }
+      });
+    }
+    window.addEventListener('beforeprint', px2rel);
+    window.addEventListener('afterprint', rel2px);
+    // Safari / 部分环境不触发 beforeprint，用 matchMedia 兜底
+    if (window.matchMedia){
+      var mq = window.matchMedia('print');
+      var onmq = function(e){ e.matches ? px2rel() : rel2px(); };
+      if (mq.addEventListener) mq.addEventListener('change', onmq);
+      else if (mq.addListener) mq.addListener(onmq);
+    }
   })();
 </script>
 
