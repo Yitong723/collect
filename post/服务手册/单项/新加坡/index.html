@@ -420,6 +420,9 @@
   .figimg{margin-top:22px;}
   .figimg img{width:100%; height:auto; display:block; border-radius:16px; box-shadow:var(--shadow-lift);}
   .figimg figcaption{margin-top:9px; text-align:center; font-size:12.5px; color:var(--muted);}
+  /* 半幅图：宽度减半、居中（用于不需要占满整行的配图）*/
+  .figimg.half{width:50%; margin-left:auto; margin-right:auto;}
+  @media (max-width:680px){ .figimg.half{width:75%;} }
   /* 图文左右排版 */
   .lead-row{display:grid; grid-template-columns:1.02fr .98fr; gap:26px; align-items:center; margin-bottom:6px;}
   .lead-row .lead{margin-bottom:0; max-width:none;}
@@ -1025,7 +1028,7 @@
         <p>到场客流在审美、客单价承受力，以及对中国新锐品牌和传统文化资产（文创、手工艺、创新生活方式、新消费品）的接受度上，与出海品牌的破圈需求<b>高度匹配</b>。</p>
       </div>
     </div>
-    <figure class="figimg">
+    <figure class="figimg half">
       <img src="assets/marina-bay-sands.png" alt="滨海湾金沙与艺术科学博物馆">
       <figcaption>毗邻地标 · 滨海湾金沙与艺术科学博物馆，同处滨海湾核心步行圈</figcaption>
     </figure>
