@@ -1194,6 +1194,17 @@
     // file:// 模式才从浏览器缓存恢复（服务器模式下文件本身就是最新版）
     if (!SERVER){
       try { var s=localStorage.getItem(KEY); if(s){ wrap.innerHTML=s; btnReset.style.display=''; } } catch(e){}
+      // 迁移：旧缓存里可能还是 Jade/Carrie 两张二维码，强制换成 GMA 单张（幂等）
+      try {
+        var qrs = wrap.querySelector('.qrs');
+        var QRHTML = '<div class="qr-card">' +
+          '<img src="assets/wechat-gma.png" alt="GMA品牌出海 微信二维码">' +
+          '<div class="nm">GMA品牌出海</div><div class="rg">扫码添加好友</div></div>';
+        if (qrs && qrs.innerHTML.replace(/\s+/g,'') !== QRHTML.replace(/\s+/g,'')){
+          qrs.innerHTML = QRHTML;
+          localStorage.setItem(KEY, wrap.innerHTML);
+        }
+      } catch(e){}
     } else {
       btnReset.style.display='none';
       setStat('idle');
