@@ -860,8 +860,22 @@
   .h-sub.blue::before{background:var(--blue);}
   .h-min{font-family:var(--serif); font-weight:700; font-size:17px; color:var(--accent-deep);
     margin:26px 0 8px;}
-  .h-min2{font-family:var(--serif); font-weight:700; font-size:15.5px; color:var(--ink);
-    margin:20px 0 6px;}
+
+  /* 板块级：整条横线起一段（案例里的 1 背景 / 2 发展路径拆解 / 数据亮点 …）*/
+  .h-part{font-family:var(--serif); font-weight:900; font-size:21px; color:var(--ink);
+    margin:46px 0 14px; padding-top:18px; border-top:2px solid var(--line); letter-spacing:-.005em;}
+
+  /* 阶段级：底色浅带 + 左侧红条（2.1 / 2.2 / 2.3）*/
+  .h-stage{font-family:var(--serif); font-weight:900; font-size:18px; color:var(--accent-deep);
+    margin:32px 0 12px; padding:11px 16px; border-left:4px solid var(--accent);
+    background:linear-gradient(90deg, var(--accent-soft), rgba(251,230,218,0) 78%);
+    line-height:1.5;}
+
+  /* 小节级：金色短横 + 深墨字（为什么选择线下验证？/ 验证方法论 …）*/
+  .h-min2{font-family:var(--serif); font-weight:700; font-size:16px; color:var(--ink);
+    margin:26px 0 7px; display:flex; align-items:baseline; gap:9px;}
+  .h-min2::before{content:""; flex:none; width:15px; height:2px; background:var(--gold);
+    transform:translateY(-5px);}
   .unit{font-family:var(--display); font-style:italic; font-weight:600; font-size:14.5px;
     color:var(--accent); margin:0 0 10px;}
   .unit.muted{color:var(--muted);}
@@ -924,7 +938,8 @@
 
   @media print{
     .pblock,.said,.gal img,.fig-solo,.fig-two{break-inside:avoid;}
-    .h-sub,.h-min,.h-min2,.unit{break-after:avoid;}
+    .h-sub,.h-part,.h-stage,.h-min,.h-min2,.unit{break-after:avoid;}
+    .h-stage,.h-part{break-inside:avoid;}
     .doc-p,li,td,th{orphans:2; widows:2;}
   }
 </style>
@@ -1108,16 +1123,16 @@
   <p class="doc-p">这次经历也让我重新理解了做品牌这件事。很幸运的是，我们只是通过一个产品，就有机会进入很多人的生活，并链接到一个个非常私人、真实的情感瞬间。</p>
 
     <div class="h-sub">案例拆解：</div>
-    <div class="h-min">素循（SUKOON）：新锐品牌，在新加坡从0到1生根发芽</div>
+    <div class="h-part">素循（SUKOON）：新锐品牌，在新加坡从0到1生根发芽</div>
   <p class="doc-p">一句话总结：不靠铺天盖地的广告，不靠烧钱投流，用7个月跑遍线下展会，一单一单验证市场、观察微表情、收集真实反馈，最终成为曼谷展会上唯一全售空的年轻品牌。</p>
 
-    <div class="h-min">1 背景</div>
+    <div class="h-part">1 背景</div>
   <p class="doc-p">2025年12月，Ashley周创立了SUKOON素循——首个以补充装为核心的香氛洗护家清品牌。</p>
   <p class="doc-p">品牌以 “回归感知，生长秩序” 为理念，通过订阅制系统，在每个清洁节点提供更好的使用体验，减少日常决策负担。但理念再好，消费者是否买单，仍是未知数。</p>
 
-    <div class="h-min">2 发展路径拆解</div>
+    <div class="h-part">2 发展路径拆解</div>
 
-    <div class="h-min2">2.1 VALIDATE｜先验证，再投入——7个月跑遍线下展会&amp;售卖空间</div>
+    <div class="h-stage">2.1 VALIDATE｜先验证，再投入——7个月跑遍线下展会&amp;售卖空间</div>
   <p class="doc-p">素循没有选择一上来就铺广告、投流量的“赌注式进入”。相反，创始人Ashley做了一个反直觉的决定：前7个月全部投入线下验证。</p>
     <p class="said">创始人：“品牌上市的时候，我突然丧失了表达的欲望——我非常想听到真实的反馈。”</p>
     <div class="h-min2">为什么选择线下验证？</div>
@@ -1135,7 +1150,7 @@
     <div class="h-min2">验证结果：数据说话</div>
   <p class="doc-p">在曼谷国际品牌售卖会，素循作为全场最年轻的品牌 ，成为唯一全售空的品牌。这不仅是销售数字的胜利，更是验证方法论的成功——产品、价格、品牌定位得到了真实市场的检验。</p>
 
-    <div class="h-min2">2.2 ENTER｜从验证到精准进入——把机会变成商业落地</div>
+    <div class="h-stage">2.2 ENTER｜从验证到精准进入——把机会变成商业落地</div>
   <p class="doc-p">验证跑通后，素循没有盲目扩张，而是基于验证结果精准进入：</p>
     <ul class="plain-list">
       <li>产品验证：通过线下展会的真实销售数据，确认了核心SKU、价格带和消费者偏好。</li>
@@ -1143,7 +1158,7 @@
       <li>品牌认知：在一次次与消费者面对面的交流中，品牌不仅卖出了产品，更建立了本地认知和信任。</li>
     </ul>
 
-    <div class="h-min2">2.3 GROW｜进入之后，如何持续增长？</div>
+    <div class="h-stage">2.3 GROW｜进入之后，如何持续增长？</div>
   <p class="doc-p">完成验证和初步进入后，素循进入持续增长阶段，策略升级为 “从被认识、被看见，到被记住、被复购” 的全链路增长体系。围绕 线下扩张、线上增长、产品升级 三个维度同步推进，形成“增长三角”闭环。</p>
     <div class="h-min2">线下持续扩张渠道</div>
   <p class="doc-p">将已验证的线下模式系统化复制到更多市场——继新加坡首站验证成功后，素循已成功进入曼谷、香港的线下渠道，持续拓展东南亚零售网络。每一站均沿用“先线下验证→再本地化扎根”的成熟路径，以最小风险实现区域复制。</p>
@@ -1152,9 +1167,9 @@
     <div class="h-min2">产品升级与扩充</div>
   <p class="doc-p">素循现已全面开始新产品线的研发与上市筹备——以已验证的用户洞察和市场反馈为依据，围绕用户未被满足的需求进行产品迭代与品类拓展，持续丰富品牌产品矩阵，为下一阶段的增长储备新动能。</p>
 
-    <div class="h-min">05 创始人说：为什么“先验证”是对的</div>
+    <div class="h-part">05 创始人说：为什么“先验证”是对的</div>
 
-    <div class="h-min">3. GMA如何助力素循的出海路径</div>
+    <div class="h-part">3. GMA如何助力素循的出海路径</div>
     <div class="tbl-scroll">
       <table class="doc-tbl">
         <thead><tr><th>阶段</th><th>素循做了什么</th><th>GMA的服务对应</th></tr></thead>
@@ -1167,7 +1182,7 @@
     </div>
   <p class="doc-p">素循的核心启示：在不确定的市场中，先用最小成本验证，拿到真实销售数据与反馈，再决定增长策略——这正是GMA始终倡导的出海理念。</p>
 
-    <div class="h-min">数据亮点</div>
+    <div class="h-part">数据亮点</div>
     <div class="tbl-scroll">
       <table class="doc-tbl kv2">
         <thead><tr><th>指标</th><th>数据</th></tr></thead>
