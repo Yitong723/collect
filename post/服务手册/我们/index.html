@@ -726,12 +726,6 @@
   .proc .step .figimg.half{margin-left:0; margin-right:auto;}
   .proc .step .figimg img{max-height:280px;}
   .proc .step .figimg figcaption{text-align:left;}
-  .logocard{height:275px; display:flex; align-items:center; justify-content:center;
-    background:#fffdf8; border:1px solid var(--rule); border-radius:16px;
-    box-shadow:var(--shadow-lift); padding:24px;}
-  .logocard img{max-width:78%; max-height:60%; width:auto; height:auto; box-shadow:none !important;
-    border-radius:0 !important;}
-
   .cover.solo{grid-template-columns:1fr;}
   .cover.solo .cover-text{max-width:none;}
   .cover.solo .sub{max-width:72ch;}
@@ -846,139 +840,73 @@
 </style>
 
 <style>
-  /* ===== 「我们」介绍册 专用样式 ===== */
+  /* ===== 「介绍资料 · 我们」专用：整段成文，不切卡片 ===== */
   :root{--blue:#3f6b8c;}
-
   .brandmark{width:46px; height:46px; border-radius:50%; display:block; flex:none;
     box-shadow:0 4px 10px -4px rgba(120,60,20,.45);}
   .topbar .tbmark{width:20px; height:20px; border-radius:50%; vertical-align:-4px; margin-right:7px;}
 
-  /* 核心逻辑：一端 → GMA → 另一端 */
-  .bridge{display:grid; grid-template-columns:1fr 1fr 1fr; gap:0; margin-top:18px;
-    background:linear-gradient(180deg,#fffdf8,#f6eedd); border:1px solid var(--line);
-    border-radius:18px; overflow:hidden; box-shadow:var(--shadow-lift);}
-  .bridge .bd{padding:24px 22px; border-right:1px solid var(--line); position:relative;}
-  .bridge .bd:last-child{border-right:none;}
-  .bridge .bd .bt{font-family:var(--display); font-style:italic; font-weight:600; font-size:12.5px;
-    color:var(--muted); letter-spacing:.04em;}
-  .bridge .bd h3{font-size:17px; margin:2px 0 7px;}
-  .bridge .bd p{font-size:13.5px; line-height:1.72; color:var(--ink-soft);
+  /* 正文段落：整段铺满，不加框 */
+  .doc-p{font-size:15.5px; line-height:1.95; color:var(--ink-soft); margin:0 0 14px;
+    text-align:justify; text-justify:inter-ideograph; max-width:none;}
+  .doc-p:last-child{margin-bottom:0;}
+  .section .lead{max-width:none;}
+
+  /* 小标题层级 */
+  .h-sub{font-family:var(--serif); font-weight:900; font-size:20px; color:var(--ink);
+    margin:34px 0 4px; display:flex; align-items:center; gap:10px;}
+  .h-sub::before{content:""; width:5px; height:21px; background:var(--accent); border-radius:3px;
+    flex:none;}
+  .h-sub.gold::before{background:var(--gold);}
+  .h-sub.blue::before{background:var(--blue);}
+  .h-min{font-family:var(--serif); font-weight:700; font-size:17px; color:var(--accent-deep);
+    margin:26px 0 8px;}
+  .h-min2{font-family:var(--serif); font-weight:700; font-size:15.5px; color:var(--ink);
+    margin:20px 0 6px;}
+  .unit{font-family:var(--display); font-style:italic; font-weight:600; font-size:14.5px;
+    color:var(--accent); margin:0 0 10px;}
+  .unit.muted{color:var(--muted);}
+
+  /* 缩进清单：只有一条细竖线，不是方块 */
+  .plain-list{list-style:none; margin:0 0 16px; padding-left:16px; border-left:2px solid var(--line);
+    display:flex; flex-direction:column; gap:9px;}
+  .plain-list li{font-size:15.5px; line-height:1.9; color:var(--ink-soft);
     text-align:justify; text-justify:inter-ideograph;}
-  .bridge .bd.mid{background:linear-gradient(180deg,var(--accent-soft),#fff8f4);}
-  .bridge .bd.mid h3{color:var(--accent-deep);}
-  .bridge .bd.mid .bt{color:var(--accent);}
-  @media (max-width:680px){ .bridge{grid-template-columns:1fr;}
-    .bridge .bd{border-right:none; border-bottom:1px solid var(--line);} }
 
-  /* 人物卡 */
-  .people{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:16px;}
-  .person{background:linear-gradient(180deg,#fffefb,#f7f0e1); border:1px solid #e7ddc8;
-    border-radius:18px; padding:20px 22px; box-shadow:inset 0 1px 0 rgba(255,255,255,.7), var(--shadow);}
-  .person .role{font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted);}
-  .person h3{font-family:var(--serif); font-weight:900; font-size:21px; margin:2px 0 1px;}
-  .person .rt{font-family:var(--display); font-style:italic; font-weight:600; font-size:13.5px;
-    color:var(--accent); margin-bottom:10px;}
-  .person p{font-size:13.5px; line-height:1.75; color:var(--ink-soft); margin-bottom:8px;
-    text-align:justify; text-justify:inter-ideograph;}
-  .person p:last-child{margin-bottom:0;}
-  .person b{color:var(--ink);}
-  .person .tags{list-style:none; display:flex; flex-wrap:wrap; gap:7px; margin-top:11px;}
-  .person .tags li{font-size:12px; background:var(--bg2); border:1px solid var(--line);
-    border-radius:8px; padding:5px 10px; color:var(--ink-soft);}
-  @media (max-width:680px){ .people{grid-template-columns:1fr;} }
+  /* 原文里的引语 */
+  .said{font-family:var(--serif); font-weight:700; font-size:16px; line-height:1.9;
+    color:#7a5410; margin:0 0 16px; padding-left:16px; border-left:3px solid var(--gold);}
 
-  /* 合作伙伴卡（带 logo） */
-  .partners{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:16px;}
-  .partner{background:linear-gradient(180deg,#fffefb,#f7f0e1); border:1px solid #e7ddc8;
-    border-radius:18px; padding:0; overflow:hidden;
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.7), var(--shadow); display:flex; flex-direction:column;}
-  .partner .plogo{height:92px; display:flex; align-items:center; justify-content:center;
-    background:#fffdf8; border-bottom:1px solid var(--rule); padding:14px 20px;}
-  .partner .plogo img{max-height:56px; max-width:70%; width:auto; height:auto; display:block;}
-  .partner .pbody{padding:16px 20px 18px;}
-  .partner h3{font-size:16.5px; margin-bottom:2px;}
-  .partner .pcap{font-size:12.5px; color:var(--accent-deep); font-weight:700;
-    font-family:var(--serif); margin-bottom:8px;}
-  .partner p{font-size:13px; line-height:1.72; color:var(--ink-soft);
-    text-align:justify; text-justify:inter-ideograph;}
-  .partner .pnum{margin-top:10px; display:flex; flex-wrap:wrap; gap:7px;}
-  .partner .pnum span{font-size:12px; background:var(--accent-soft); color:var(--accent-deep);
-    border-radius:8px; padding:5px 10px; font-weight:600;}
-  @media (max-width:680px){ .partners{grid-template-columns:1fr;} }
+  /* 合作伙伴 logo：一条横线上的图，不做卡片 */
+  .logo-line{margin:30px 0 10px; padding-bottom:14px; border-bottom:1px solid var(--rule);}
+  .logo-line img{max-height:52px; max-width:230px; width:auto; height:auto; display:block;}
 
-  /* 商圈 */
-  .malls{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:16px;}
-  .mall{background:var(--paper); border:1px solid var(--rule); border-radius:16px; padding:18px 20px;
-    box-shadow:var(--shadow); border-top:3px solid var(--gold);}
-  .mall.b{border-top-color:var(--blue);}
-  .mall .mt{font-family:var(--display); font-style:italic; font-size:12.5px; color:var(--muted);}
-  .mall h3{font-size:17px; margin:1px 0 6px;}
-  .mall p{font-size:13.5px; line-height:1.7; color:var(--ink-soft);
-    text-align:justify; text-justify:inter-ideograph;}
-  .mall ul{list-style:none; margin-top:9px; display:flex; flex-direction:column; gap:6px;}
-  .mall li{font-size:13px; color:var(--ink-soft); padding-left:16px; position:relative;}
-  .mall li::before{content:"›"; position:absolute; left:2px; color:var(--gold); font-weight:700;}
-  .mall.b li::before{color:var(--blue);}
-  @media (max-width:680px){ .malls{grid-template-columns:1fr;} }
+  /* 图片 */
+  .fig-solo{margin:22px 0 6px;}
+  .fig-solo img{width:100%; height:auto; display:block; border-radius:16px; box-shadow:var(--shadow-lift);}
+  .fig-two{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:22px 0 6px; align-items:center;}
+  .fig-two img{width:100%; height:auto; display:block; border-radius:16px;}
+  .fig-two .plain img{border-radius:0; box-shadow:none; max-height:110px; width:auto; margin:0 auto;}
+  .gal{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:22px 0 6px;}
+  .gal img{width:100%; height:168px; object-fit:cover; border-radius:12px; display:block;}
+  @media (max-width:680px){ .fig-two,.gal{grid-template-columns:repeat(2,1fr);}
+    .gal img{height:130px;} }
 
-  /* 引言 */
-  .quote{margin-top:16px; background:var(--gold-soft); border:1px solid #e3cd9e;
-    border-left:5px solid var(--gold); border-radius:14px; padding:18px 22px;}
-  .quote p{font-family:var(--serif); font-weight:700; font-size:16px; line-height:1.72;
-    color:#7a5410;}
-  .quote .who{font-size:12.5px; color:var(--muted); margin-top:8px; font-family:var(--sans);
-    font-weight:500;}
-
-  /* 创始人自述：无框两列，靠分隔线分组 */
-  .fnotes{display:grid; grid-template-columns:1fr 1fr; gap:0 34px; margin-top:18px;}
-  .fnotes .fn{padding:16px 0; border-bottom:1px dashed var(--rule);}
-  .fnotes .fn:nth-last-child(-n+2){border-bottom:none;}
-  .fnotes .fn h4{font-family:var(--serif); font-weight:700; font-size:15.5px; color:var(--ink);
-    margin-bottom:5px;}
-  .fnotes .fn p{font-size:13.5px; line-height:1.72; color:var(--ink-soft);
-    text-align:justify; text-justify:inter-ideograph;}
-  .closing-note{margin-top:18px; padding-left:14px; border-left:3px solid var(--gold);
-    font-family:var(--serif); font-weight:700; color:#7a5410; max-width:none;}
-  @media (max-width:680px){ .fnotes{grid-template-columns:1fr;}
-    .fnotes .fn:nth-last-child(-n+2){border-bottom:1px dashed var(--rule);}
-    .fnotes .fn:last-child{border-bottom:none;} }
-
-  /* 数据亮点：无框定义表 */
-  .facts{margin-top:12px; border-top:1px solid var(--rule);}
-  .facts > div{display:grid; grid-template-columns:150px 1fr; gap:14px; padding:12px 2px;
-    border-bottom:1px solid var(--rule);}
-  .facts dt{font-family:var(--serif); font-weight:700; font-size:14px; color:var(--accent-deep);}
-  .facts dd{font-size:14.5px; color:var(--ink); line-height:1.55;}
-  .facts dd b{color:var(--accent-deep);}
-  @media (max-width:680px){ .facts > div{grid-template-columns:1fr; gap:2px;} }
-
-  /* 图墙 */
-  .gallery{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:18px;}
-  .gallery img{width:100%; height:150px; object-fit:cover; border-radius:12px; display:block;
-    box-shadow:var(--shadow);}
-  .gallery.tall img{height:190px;}
-  @media (max-width:680px){ .gallery{grid-template-columns:repeat(2,1fr);}
-    .gallery img,.gallery.tall img{height:130px;} }
-
-  /* 观察清单 */
-  .obs{display:grid; grid-template-columns:1fr 1fr; gap:0 30px; margin-top:6px;}
-  .obs .o{display:flex; gap:12px; padding:13px 0; border-bottom:1px dashed var(--rule);}
-  .obs .n{font-family:var(--display); font-style:italic; font-weight:600; font-size:13px;
-    color:var(--accent); flex:none; padding-top:2px;}
-  .obs p{font-size:13.5px; line-height:1.62; color:var(--ink-soft);}
-  @media (max-width:680px){ .obs{grid-template-columns:1fr;} }
-
-  .punch{background:linear-gradient(180deg,#fbf4e4,#f3e9d2) !important;
-    border:1px solid #e3cd9e; border-left:5px solid var(--accent);
-    color:var(--ink) !important; box-shadow:var(--shadow) !important;}
-  .punch b{color:var(--accent-deep) !important;}
-
-  .cover.solo{grid-template-columns:1fr;}
-  .figimg.wide img{max-height:300px; width:100%; object-fit:cover;}
+  /* 原文里的两张表 */
+  .doc-tbl{width:100%; border-collapse:collapse; margin:16px 0 6px; font-size:14.5px;}
+  .doc-tbl th,.doc-tbl td{text-align:left; padding:13px 14px; border-bottom:1px solid var(--rule);
+    vertical-align:top; line-height:1.7;}
+  .doc-tbl thead th{font-family:var(--serif); font-weight:900; color:var(--ink);
+    border-bottom:2px solid var(--line); background:transparent;}
+  .doc-tbl tbody th{font-family:var(--serif); font-weight:700; color:var(--accent-deep); width:170px;}
+  .doc-tbl td{color:var(--ink-soft);}
+  .doc-tbl.kv2 tbody th{width:190px;}
+  .tbl-scroll{overflow-x:auto;}
 
   @media print{
-    .person,.partner,.mall,.quote,.bridge .bd,.gallery img,.obs .o{break-inside:avoid;}
-    .bridge,.people,.partners,.malls{break-inside:auto;}
+    .logo-line,.said,.gal img,.fig-solo,.fig-two{break-inside:avoid;}
+    .h-sub,.h-min,.h-min2,.unit{break-after:avoid;}
+    .doc-p,li,td,th{orphans:2; widows:2;}
   }
 </style>
 
@@ -1000,321 +928,221 @@
 
 <div class="wrap">
 
-<!-- ════════════════════════ 封面 ════════════════════════ -->
   <header class="cover">
     <div class="cover-text">
       <div class="kick">
         <img class="brandmark" src="assets/gma-logo.png" alt="GMA">
         <span class="biz"><br>Global Market Accelerator&nbsp;</span>
       </div>
-      <h1>我们是<em>谁</em>，<br>以及我们如何<em>做事</em></h1>
-      <p class="cover-en">GMA ｜ Global Market Accelerator</p>
-      <p class="sub"><b>中国品牌 × 海外市场发展系统。</b><br>
-        一端连接中国品牌、团队与产品逻辑，另一端连接海外本地消费者、商业场景、渠道与行业生态，中间由 GMA 完成<strong>判断、连接、落地与持续增长</strong>。</p>
-      <div class="cover-meta">
-        <span class="pill"><b>01</b>&nbsp;市场验证</span>
-        <span class="pill"><b>02</b>&nbsp;真正进入</span>
-        <span class="pill"><b>03</b>&nbsp;持续增长</span>
-      </div>
+      <h1>介绍资料-我们</h1>
+      <p class="cover-en">GMA｜Global Market Accelerator</p>
+      <p class="sub">中国品牌 × 海外市场发展系统</p>
     </div>
     <div class="cover-art">
-      <img src="assets/orchard.png" alt="新加坡乌节路商圈实拍">
+      <img src="assets/orchard.png" alt="新加坡乌节路商圈">
     </div>
   </header>
 
-<!-- ════════════════════════ 01 项目背景 ════════════════════════ -->
-  <section class="section" id="background">
-    <div class="sec-kicker"><span class="sec-no">01</span><span class="ln"></span><span class="en-tag">Background</span></div>
-    <h2>为什么会有<em>这样一个项目</em></h2>
-    <p class="lead">在实际出海过程中我们反复看到：真正进入一个新市场，<span class="hl">不是找一个营销团队、做几场活动，或是找一个代理机构做本地化包装就能完成的</span>。</p>
-    <p class="lead">真正的挑战在于：如何围绕品牌的实际发展需求，构建一套能真正嵌入当地市场、持续支撑品牌发展的系统——既懂<span class="key">中国品牌与产品逻辑</span>，也真正进入<span class="key">海外消费者、渠道与行业生态</span>，并在两者之间完成判断、连接、落地与持续增长。</p>
-    <p class="lead">同时我们也看到，海外商业空间本身需要更多元、更丰富的品牌与内容，当地消费者也期待买到更多真正好的产品。关键并不在于简单地"把产品带过去"，而在于如何帮助品牌以<b>更有温度的方式</b>被看见、被理解与被接受，在当地市场生态中真正扎根、持续生长，实现长期发展。</p>
-    <div class="punch">我们做的不是"把货运出去"，而是<b>把一个品牌，真正种进另一个市场的生活里</b>。</div>
+  <section class="section">
+    <div class="sec-kicker"><span class="sec-no">01</span><span class="ln"></span></div>
+    <h2>项目背景</h2>
+  <p class="doc-p">在实际出海过程中我们反复看到：真正进入一个新市场，不是找一个营销团队、做几场活动，或是找一个代理机构做本地化包装就能完成的。</p>
+  <p class="doc-p">真正的挑战在于：如何围绕品牌的实际发展需求，构建一套能真正嵌入当地市场、持续支撑品牌发展的系统——既懂中国品牌与产品逻辑，也真正进入海外消费者、渠道与行业生态，并在两者之间完成判断、连接、落地与持续增长。</p>
+  <p class="doc-p">同时我们也看到，海外商业空间本身需要更多元、更丰富的品牌与内容，当地消费者也期待买到更多真正好的产品。关键并不在于简单地“把产品带过去”，而在于如何帮助品牌以更有温度的方式被看见、被理解与被接受。在当地市场生态中真正扎根、持续生长，实现长期发展。</p>
   </section>
 
-<!-- ════════════════════════ 02 关于 GMA ════════════════════════ -->
-  <section class="section" id="about">
-    <div class="sec-kicker"><span class="sec-no">02</span><span class="ln"></span><span class="en-tag">About GMA</span></div>
-    <h2>关于 <em>GMA</em></h2>
-    <p class="lead">GMA 是一个由<b>中国侧团队</b>与<b>海外发展侧多方</b>联合发起、共同推动的出海项目，也是一个连接不同市场资源与能力的海外市场发展系统。</p>
-
-    <div class="bridge">
-      <div class="bd">
-        <span class="bt">One side</span>
-        <h3>中国侧</h3>
-        <p>连接中国品牌、团队与产品逻辑——理解品牌的发展阶段、真实诉求与节奏。</p>
-      </div>
-      <div class="bd mid">
-        <span class="bt">In between · GMA</span>
-        <h3>判断 · 连接 · 落地 · 增长</h3>
-        <p>在两端之间完成市场判断、路径设计、资源匹配与跨文化协同，让每一步都可执行、可验证。</p>
-      </div>
-      <div class="bd">
-        <span class="bt">The other side</span>
-        <h3>海外侧</h3>
-        <p>连接海外本地消费者、商业场景、渠道与行业生态——真实的规则、客流与合作网络。</p>
-      </div>
-    </div>
-
-    <div class="flow" style="margin-top:16px;">
-      <div class="stage">
-        <div class="ph">Step 01</div><span class="stn">Validate</span>
-        <h3>市场验证</h3>
-        <ul><li>先拿到真实反馈，再决定投入</li><li>消费者 × 商业端双线验证</li></ul>
-      </div>
-      <div class="stage">
-        <div class="ph">Step 02</div><span class="stn">Enter</span>
-        <h3>真正进入</h3>
-        <ul><li>渠道匹配、买手对接</li><li>把机会变成商业落地</li></ul>
-      </div>
-      <div class="stage">
-        <div class="ph">Step 03</div><span class="stn">Grow</span>
-        <h3>持续增长</h3>
-        <ul><li>本地营销与渠道增长</li><li>从被看见到被记住、被复购</li></ul>
-      </div>
-    </div>
+  <section class="section">
+    <div class="sec-kicker"><span class="sec-no">02</span><span class="ln"></span></div>
+    <h2>关于 GMA</h2>
+  <p class="doc-p">GMA 是一个由中国侧团队与海外发展侧多方联合发起、共同推动的出海项目，也是一个连接不同市场资源与能力的海外市场发展系统。</p>
+    <div class="h-min">核心逻辑：</div>
+    <ul class="plain-list">
+      <li>一端连接中国品牌、团队与产品逻辑；</li>
+      <li>另一端连接海外本地消费者、商业场景、渠道与行业生态；</li>
+      <li>中间通过GMA，完成判断、连接、落地与持续增长。</li>
+    </ul>
+  <p class="doc-p">为品牌提供一条从市场验证 → 真正进入 → 持续增长的完整路径。</p>
   </section>
 
-<!-- ════════════════════════ 03 WHO WE ARE · 中国侧 ════════════════════════ -->
-  <section class="section" id="china">
-    <div class="sec-kicker"><span class="sec-no">03</span><span class="ln"></span><span class="en-tag">Who we are</span></div>
-    <h2>中国侧　<em>GMA - China</em></h2>
-    <p class="lead">负责理解中国品牌的产品逻辑、发展阶段与真实诉求，并在此基础上完成<b>市场判断、路径设计与跨文化协同</b>。团队由具备中国与新加坡、英国等市场经验的核心成员组成，能够在品牌策略、本地化落地与资源匹配之间形成有效连接，确保出海过程既符合品牌自身节奏，也能真正嵌入目标市场的商业生态。</p>
+  <section class="section">
+    <div class="sec-kicker"><span class="sec-no">03</span><span class="ln"></span></div>
+    <h2>03｜WHO WE ARE</h2>
 
-    <div class="people">
-      <div class="person">
-        <div class="role">团队负责人</div>
-        <h3>JADE</h3>
-        <div class="rt">China × Singapore</div>
-        <p>拥有中国、新加坡多地学习与工作经历，长期参与品牌、商业、文化及跨境项目。</p>
-        <p>曾在新加坡参与本地品牌从 <b>0 到 1</b> 的运营与市场拓展，负责供应链构建、市场增长策略及本地资源整合，推动品牌获<b>《联合早报》</b>报道，并促成与<b>新加坡航空、万豪酒店、DBS 银行</b>等头部品牌的合作。这段经历让她深入了解海外市场的商业环境与消费者特征，也积累了在多元文化团队中协同推进项目的实际操作经验。</p>
-        <p>回国后扎根上海，持续参与中国及国际品牌、文化及 IP 类项目，在政府沟通、资源调度与跨领域协作方面积累了系统性的实践经验。善于在品牌与市场之间建立有效连接，理解中国品牌的优势与挑战，也清楚海外市场的真实规则与进入门槛。</p>
-        <ul class="tags"><li>品牌 0→1 运营</li><li>供应链构建</li><li>本地资源整合</li><li>政府沟通</li></ul>
-      </div>
-      <div class="person">
-        <div class="role">团队负责人</div>
-        <h3>CARRIE</h3>
-        <div class="rt">China × UK</div>
-        <p>英国学习与工作经历，长期关注品牌出海、跨文化商业实践及本地市场进入策略。</p>
-        <p>深入英国本地市场的商业环境、消费者习惯与行业运作规则。期间参与中国品牌进入英国市场的相关项目，协助品牌完成<b>市场调研、本地资源对接及落地执行</b>，积累了将中国品牌带入西方市场的实际操作经验。擅长从品牌的具体情况出发找到切入点，并对落地环节的可行性有务实判断——包括如何适配本地规则、如何调动可用资源、如何把计划转化为可执行的步骤。</p>
-        <p>回国后持续关注中国品牌国际化路径，对不同市场的进入策略、资源匹配与落地方式有系统性理解。她清楚品牌在海外落地时容易卡在哪些环节，也具备从市场理解到本地连接的实际能力，能够帮助品牌找到<b>可行、可控</b>的落地方式。</p>
-        <ul class="tags"><li>市场调研</li><li>进入策略</li><li>本地资源对接</li><li>落地执行</li></ul>
-      </div>
-    </div>
-  </section>
+    <div class="h-sub">中国侧：</div>
+    <p class="unit">GMA- China</p>
+  <p class="doc-p">负责理解中国品牌的产品逻辑、发展阶段与真实诉求，并在此基础上完成市场判断、路径设计与跨文化协同。团队由具备中国与新加坡、英国等市场经验的核心成员组成，能够在品牌策略、本地化落地与资源匹配之间形成有效连接，确保出海过程既符合品牌自身节奏，也能真正嵌入目标市场的商业生态。</p>
 
-<!-- ════════════════════════ 04 新加坡侧 ════════════════════════ -->
-  <section class="section" id="sg">
-    <div class="sec-kicker"><span class="sec-no">04</span><span class="ln"></span><span class="en-tag">GMA - SG</span></div>
-    <h2>新加坡侧　<em>GMA - SG</em></h2>
-    <p class="lead">由本地团队与核心合作伙伴共同构成，负责<b>市场扫描、本地化落地、渠道对接与持续运营支持</b>。核心职能是：深入理解新加坡本地消费者、商业场景与行业生态，为中国品牌提供真实可执行的进入路径与长期增长支撑。</p>
-    <p class="lead">团队覆盖<span class="key">本地化市场研究、线上服务、线下渠道合作及零售场景激活</span>，能够在品牌进入新加坡后，持续提供从场景落地到行业资源连接的全链路支持。</p>
+    <div class="h-sub">团队负责人-JADE</div>
+    <p class="unit">China × Singapore </p>
+  <p class="doc-p">Jade 拥有中国、新加坡多地学习与工作经历，长期参与品牌、商业、文化及跨境项目。</p>
+  <p class="doc-p">曾在新加坡参与本地品牌从 0 到 1 的运营与市场拓展，负责供应链构建、市场增长策略及本地资源整合，推动品牌获《联合早报》报道，并促成与新加坡航空、万豪酒店、DBS 银行等头部品牌的合作。这段经历让她深入了解了海外市场的商业环境与消费者特征，也积累了在多元文化团队中协同推进项目的实际操作经验。</p>
+  <p class="doc-p">回国后扎根上海，她持续参与中国及国际品牌、文化及 IP 类项目，在政府沟通、资源调度与跨领域协作方面积累了系统性的实践经验。善于在品牌与市场之间建立有效的连接，理解中国品牌的优势与挑战，也清楚海外市场的真实规则与进入门槛。</p>
 
-    <div class="subh">核心合作伙伴</div>
-    <div class="partners">
-      <div class="partner">
-        <div class="plogo"><img src="assets/invade.png" alt="INVADE.co"></div>
-        <div class="pbody">
-          <h3>INVADE.co</h3>
-          <div class="pcap">零售场景与品牌激活</div>
-          <p>自 2010 年起深耕新加坡零售激活领域，专注于市集、售卖节、沉浸式体验与品牌空间活化。旗下运营多个自有品牌与概念，包括大型创意节 Artbox、手作市集 Makers' Market、二手市集 Fleawhere、咖啡社区活动 Weekend Brew Club，以及创新零售实验平台 RED LABEL，形成覆盖新兴品牌、创作者与社区的多层次生态。</p>
-          <div class="pnum"><span>合作商业群 10,000+</span><span>覆盖本地约 80% 线下零售活动网络</span><span>单场创业嘉年华近 5 万付费客流</span></div>
-        </div>
-      </div>
-      <div class="partner">
-        <div class="plogo"><img src="assets/sra.png" alt="Singapore Retailers Association"></div>
-        <div class="pbody">
-          <h3>Singapore Retailers Association (SRA)</h3>
-          <div class="pcap">新加坡零售业的主要行业代表机构</div>
-          <p>SRA 是新加坡零售行业的核心网络平台，覆盖本地主要零售商及商业资源。作为行业与政府之间的重要桥梁，SRA 代表零售业与 Enterprise Singapore、Workforce Singapore、Singapore Tourism Board 等机构沟通，积极推动零售业数字化转型、生产力提升、体验式消费升级，以及本地零售商的国际化发展，在行业生态中扮演关键角色。</p>
-        </div>
-      </div>
-      <div class="partner">
-        <div class="plogo"><img src="assets/srf.png" alt="Singapore Retail Festival"></div>
-        <div class="pbody">
-          <h3>Singapore Retail Festival (SRF)</h3>
-          <div class="pcap">政府背书的零售生态整合平台</div>
-          <p>SRF 是新加坡零售生态中的重要商业合作网络，帮助品牌深入理解本地零售环境并建立有效商业连接。活动聚焦体验式零售（互动激活、快闪店、工作坊等），有效吸引本地与国际客流，同时展示新加坡零售创新成果，是连接品牌、商场与消费者的核心节日平台。</p>
-          <div class="pnum"><span>约 3,000 家门店参与</span></div>
-        </div>
-      </div>
-      <div class="partner">
-        <div class="plogo"><img src="assets/enterprise-sg.png" alt="Enterprise Singapore"></div>
-        <div class="pbody">
-          <h3>Enterprise Singapore</h3>
-          <div class="pcap">新加坡政府推动企业发展的主要机构</div>
-          <p>隶属于新加坡贸工部（MTI），是以企业为中心的国家级机构，支持不同发展阶段的公司（初创企业、中小企业及高成长企业）进行能力建设、创新与国际化。</p>
-          <div class="pnum"><span>2025 年支持约 11,700 家企业</span><span>2,400 家开展转型项目</span><span>预计带来约 123 亿新元额外年收入</span><span>创造约 1 万个技术岗位</span></div>
-        </div>
-      </div>
-    </div>
+    <div class="h-sub">团队负责人-CARRIE</div>
+    <p class="unit">China × UK</p>
+  <p class="doc-p">Carrie 英国学习与工作经历，长期关注品牌出海、跨文化商业实践及本地市场进入策略。</p>
+  <p class="doc-p">深入英国本地市场的商业环境、消费者习惯与行业运作规则。在此期间，参与了中国品牌进入英国市场的相关项目，协助品牌完成市场调研、本地资源对接及落地执行，积累了将中国品牌带入西方市场的实际操作经验。擅长从品牌的具体情况出发，找到进入海外市场的切入点，并对落地环节的可行性有务实判断——包括如何适配本地规则、如何调动可用资源、如何把计划转化为可执行的步骤。</p>
+  <p class="doc-p">回国后，她持续关注中国品牌国际化路径，对不同市场的进入策略、资源匹配与落地方式有系统性的理解。她清楚品牌在海外落地时容易卡在哪些环节，也具备从市场理解到本地连接的实际能力，能够帮助品牌找到可行、可控的落地方式。</p>
 
-    <div class="subh">核心商圈网络</div>
-    <p class="lead">两大商圈定位互补，可同时服务<b>高端形象塑造</b>与<b>大众市场激活</b>需求。</p>
-    <div class="malls">
-      <div class="mall">
-        <div class="mt">High-end showcase</div>
-        <h3>乌节路 Orchard Road</h3>
-        <p>新加坡最标志性的高端购物与生活方式大道，是国际品牌进入新加坡的核心展示窗口。</p>
-        <ul>
-          <li>以 ION Orchard、Ngee Ann City、Paragon 等高端物业为代表</li>
-          <li>聚焦国际品牌与高净值客群</li>
-        </ul>
-      </div>
-      <div class="mall b">
-        <div class="mt">Mass-market activation</div>
-        <h3>武吉士 Bugis Town</h3>
-        <p>CapitaLand 集团整合运营的亲民潮流零售生态，位于新加坡市中心文化区。</p>
-        <ul>
-          <li>Bugis Junction、Bugis+ 与 Bugis Street 三大物业无缝连接</li>
-          <li>总零售面积超过 80 万平方英尺</li>
-          <li>形成完整的"商场 + 市集"体验闭环</li>
-        </ul>
-      </div>
-    </div>
-    <div class="figrow">
-      <figure class="figimg"><img src="assets/orchard.png" alt="乌节路 ION Orchard 实拍">
-        <figcaption>乌节路商圈 · 国际品牌的核心展示窗口</figcaption></figure>
-      <figure class="figimg"><div class="logocard"><img src="assets/capitaland.png" alt="CapitaLand Development"></div>
-        <figcaption>武吉士 Bugis Town · 由 CapitaLand 整合运营</figcaption></figure>
+    <div class="h-sub blue">新加坡侧：</div>
+    <p class="unit">GMA- SG</p>
+  <p class="doc-p">由本地团队与核心合作伙伴共同构成，负责市场扫描、本地化落地、渠道对接与持续运营支持。核心职能是：深入理解新加坡本地消费者、商业场景与行业生态，为中国品牌提供真实可执行的进入路径与长期增长支撑。</p>
+  <p class="doc-p">团队覆盖本地化市场研究、线上服务、线下渠道合作及零售场景激活，能够在品牌进入新加坡后，持续提供从场景落地到行业资源连接的全链路支持。</p>
+
+    <div class="h-sub gold">核心合作伙伴</div>
+
+    <div class="logo-line"><img src="assets/invade.png" alt="INVADE.co"></div>
+    <div class="h-min">INVADE.co</div>
+    <p class="unit muted">零售场景与品牌激活</p>
+  <p class="doc-p">自2010年起深耕新加坡零售激活领域，专注于市集、售卖节、沉浸式体验与品牌空间活化。</p>
+  <p class="doc-p">旗下运营多个自有品牌与概念，包括大型创意节 Artbox、手作市集 Makers’ Market、二手市集 Fleawhere、咖啡社区活动 Weekend Brew Club，以及创新零售实验平台 RED LABEL，形成覆盖新兴品牌、创作者与社区的多层次生态。</p>
+  <p class="doc-p">目前合作商业群超过1万+，涵盖新锐品牌、小众设计师、手工创意、餐饮等业态。（约覆盖新加坡本地80%的线下零售销售活动网络）其标志性活动“创业嘉年华”单场吸引近5万付费入场消费人群，具备强大的流量与转化能力。</p>
+
+    <div class="logo-line"><img src="assets/sra.png" alt="Singapore Retailers Association"></div>
+    <div class="h-min">Singapore Retailers Association (SRA)</div>
+    <p class="unit muted">新加坡零售业的主要行业代表机构</p>
+  <p class="doc-p">SRA 是新加坡零售行业的核心网络平台，覆盖本地主要零售商及商业资源。作为行业与政府之间的重要桥梁，SRA 代表零售业与 Enterprise Singapore、Workforce Singapore、Singapore Tourism Board 等机构沟通，积极推动零售业数字化转型、生产力提升、体验式消费升级，以及本地零售商的国际化发展，在行业生态中扮演关键角色。</p>
+
+    <div class="logo-line"><img src="assets/srf.png" alt="Singapore Retail Festival"></div>
+    <div class="h-min">Singapore Retail Festival (SRF)</div>
+    <p class="unit muted">政府背书的零售生态整合平台</p>
+  <p class="doc-p">SRF 是新加坡零售生态中的重要商业合作网络，帮助品牌深入理解本地零售环境并建立有效商业连接。活动约有3,000家门店参与，聚焦体验式零售（包括互动激活、快闪店、工作坊等），有效吸引本地与国际客流，同时展示新加坡零售创新成果，连接品牌、商场与消费者的核心节日平台。</p>
+
+    <div class="logo-line"><img src="assets/enterprise-sg.png" alt="Enterprise Singapore"></div>
+    <div class="h-min">Enterprise Singapore</div>
+    <p class="unit muted">新加坡政府推动企业发展的主要机构</p>
+  <p class="doc-p">Enterprise Singapore 隶属于新加坡贸工部（Ministry of Trade and Industry, MTI），是以企业为中心的国家级机构，支持不同发展阶段的公司（初创企业、中小企业及高成长企业）进行能力建设、创新与国际化。</p>
+  <p class="doc-p">2025年，该机构共支持约11,700家企业，其中2,400家开展转型项目，预计带来约123亿新元额外年收入，并创造约1万个技术岗位，是推动新加坡企业成长与产业升级的核心力量。</p>
+
+    <div class="h-sub gold">核心商圈网络：</div>
+  <p class="doc-p">两大商圈定位互补，可同时服务高端形象塑造与大众市场激活需求：</p>
+    <div class="h-min2">乌节路（Orchard Road）商圈物业新加坡最标志性的高端购物与生活方式大道，是国际品牌进入新加坡的核心展示窗口。</div>
+  <p class="doc-p">以 ION Orchard、Ngee Ann City、Paragon 等高端物业为代表，聚焦国际品牌与高净值客群。</p>
+    <div class="h-min2">武吉士（Bugis）商圈物业 — Bugis TownCapitaLand 集团整合运营的亲民潮流零售生态。</div>
+  <p class="doc-p">位于新加坡市中心文化区，由 Bugis Junction、Bugis+ 与 Bugis Street 三大物业无缝连接，总零售面积超过 80 万平方英尺，形成完整的“商场 + 市集”体验闭环。</p>
+    <div class="fig-two">
+      <div><img src="assets/orchard.png" alt="乌节路商圈"></div>
+      <div class="plain"><img src="assets/capitaland.png" alt="CapitaLand Development"></div>
     </div>
   </section>
 
-<!-- ════════════════════════ 05 品牌案例 ════════════════════════ -->
-  <section class="section" id="case">
-    <div class="sec-kicker"><span class="sec-no">05</span><span class="ln"></span><span class="en-tag">Case study</span></div>
-    <h2>品牌案例｜素循 SUKOON：<em>10 个月，在新加坡生根发芽</em></h2>
-    <p class="lead">不靠铺天盖地的广告，不靠烧钱投流，用 7 个月跑遍线下展会，<span class="hl">一单一单验证市场、观察微表情、收集真实反馈</span>，最终成为曼谷展会上唯一全售空的年轻品牌。</p>
+  <section class="section">
+    <div class="sec-kicker"><span class="sec-no">04</span><span class="ln"></span></div>
+    <h2>总结</h2>
+  <p class="doc-p">GMA 汇聚中国侧与新加坡本地的实践经验、行业网络与落地资源，共同构建一套真正服务于中国品牌海外发展的支持系统。</p>
+  <p class="doc-p">我们相信，好的连接不只是资源的叠加，而是理解、判断与持续协作的结果。</p>
+  <p class="doc-p">无论您处于市场验证、落地进入，还是寻求长期增长的阶段，GMA 都愿意成为可靠的同行者。</p>
+  <p class="doc-p">期待与更多有志于真实出海的品牌与团队相遇，共同开启下一站市场。</p>
+  </section>
 
-    <div class="databand">
-      <div class="stat"><div class="big">7<small>个月</small></div><div class="cap">线下验证周期</div><div class="src">上市即投入线下</div></div>
-      <div class="stat"><div class="big">10<small>场</small></div><div class="cap">展会与售卖空间</div><div class="src">近 10 个场次验证</div></div>
-      <div class="stat"><div class="big">1<small>/全场</small></div><div class="cap">曼谷唯一全售空</div><div class="src">全场最年轻品牌</div></div>
-      <div class="stat"><div class="big">10<small>%</small></div><div class="cap">展期内复购占比</div><div class="src">展卖未结束即出现回购</div></div>
+  <section class="section">
+    <div class="sec-kicker"><span class="sec-no">05</span><span class="ln"></span></div>
+    <h2>品牌案例：</h2>
+    <div class="h-sub">新锐品牌--素循</div>
+  <p class="doc-p">仅用10个月，在新加坡生根发芽 快速发展</p>
+    <div class="gal">
+      <img src="assets/sukoon-kv.jpg" alt="素循现场">
+      <img src="assets/sukoon-concept.jpg" alt="素循现场">
+      <img src="assets/sukoon-production.jpg" alt="素循现场">
+      <img src="assets/sukoon-product.jpg" alt="素循现场">
+      <img src="assets/sukoon-guest.jpg" alt="素循现场">
+      <img src="assets/sukoon-ugc.jpg" alt="素循现场">
+      <img src="assets/sukoon-booth.jpg" alt="素循现场">
+      <img src="assets/sukoon-retail-sg.jpg" alt="素循现场">
+    </div>
+    <div class="gal">
+      <img src="assets/sukoon-scentbar.jpg" alt="素循现场">
+      <img src="assets/sukoon-hk.jpg" alt="素循现场">
+      <img src="assets/sukoon-store.jpg" alt="素循现场">
+      <img src="assets/sukoon-display.jpg" alt="素循现场">
     </div>
 
-    <div class="gallery">
-      <img src="assets/sukoon-kv.jpg" alt="素循品牌主视觉">
-      <img src="assets/sukoon-concept.jpg" alt="素循品牌理念">
-      <img src="assets/sukoon-production.jpg" alt="素循首个产品下线">
-      <img src="assets/sukoon-product.jpg" alt="素循首发系列产品">
-    </div>
+    <div class="h-sub">创始人：</div>
+  <p class="doc-p">进入当地消费场域---让我感受最深的是很多事情只有真正来到线下，才会发生。</p>
+  <p class="doc-p">与消费者：面对面和消费者交流之后，我们第一次很直接地感受到，他们为什么喜欢产品、会被什么细节打动，以及真实的购买反馈。</p>
+  <p class="doc-p">与本地机会：很多后续的合作机会，是在现场一次次交流、认识和链接中自然发生的。</p>
+  <p class="doc-p">尤其是在和当地消费者、PR以及合作伙伴接触之后，会明显发现，原本陌生的市场，也会因为一次真实的见面，迅速拉近距离。</p>
+  <p class="doc-p">本地市场反馈：3天半的展卖里，我们两次卖空库存；更意外的是，在展卖还没有结束时，就已经出现了回购和复购，约占总订单量的10%。</p>
+  <p class="doc-p">这次经历也让我重新理解了做品牌这件事。很幸运的是，我们只是通过一个产品，就有机会进入很多人的生活，并链接到一个个非常私人、真实的情感瞬间。</p>
 
-    <div class="subh">01　背景</div>
-    <p class="lead">2025 年 12 月，Ashley 周创立了 SUKOON 素循——首个以<b>补充装</b>为核心的香氛洗护家清品牌。品牌以「回归感知，生长秩序」为理念，通过订阅制系统，在每个清洁节点提供更好的使用体验，减少日常决策负担。但理念再好，<span class="key">消费者是否买单，仍是未知数</span>。</p>
+    <div class="h-sub">案例拆解：</div>
+    <div class="h-min">素循（SUKOON）：新锐品牌，在新加坡从0到1生根发芽</div>
+  <p class="doc-p">一句话总结：不靠铺天盖地的广告，不靠烧钱投流，用7个月跑遍线下展会，一单一单验证市场、观察微表情、收集真实反馈，最终成为曼谷展会上唯一全售空的年轻品牌。</p>
 
-    <div class="phases">
-      <div class="phase p-pre">
-        <div class="ph-h"><span class="ph-ic">①</span><span class="ph-t">VALIDATE｜先验证，再投入</span><span class="ph-en">7 个月跑遍线下展会 &amp; 售卖空间</span></div>
-        <ul class="ph-list">
-          <li>素循没有选择一上来就铺广告、投流量的"<b>赌注式进入</b>"。相反，创始人 Ashley 做了一个反直觉的决定：<b>前 7 个月全部投入线下验证</b>。</li>
-          <li><b>为什么选择线下？</b>新加坡电商数据中，品类前 5 名月销才六七千单，第 3 名开始断崖式跌到一两千——这样的体量养不活一个新品牌。与其在线上烧钱抢存量，不如在线下找到真实的消费者。</li>
-        </ul>
-        <div class="live">
-          <div class="lv-lab">🔬 验证方法论：微表情就是数据库</div>
-          <span class="lv-en">Micro-expressions as the database</span>
-          <div class="obs">
-            <div class="o"><span class="n">01</span><p>观察用户路过展位时的<b>微表情</b>——什么让他停下来？</p></div>
-            <div class="o"><span class="n">02</span><p>闻到味道的<b>第一反应</b>——香气是否打动他？</p></div>
-            <div class="o"><span class="n">03</span><p>哪句话引起了兴趣——<b>什么卖点真正有效</b>？</p></div>
-            <div class="o"><span class="n">04</span><p>对价格的第一反应——<b>定价是否在心理账户内</b>？</p></div>
-          </div>
-          <p style="margin-top:12px;"><b>每一次验证都在回答同一个核心问题：新加坡本地消费者真的会买单吗？</b></p>
-        </div>
-        <div class="star">
-          <span class="lab">Result</span>
-          <p>在曼谷国际品牌售卖会，素循作为<b>全场最年轻的品牌</b>，成为<b>唯一全售空</b>的品牌。这不只是销售数字的胜利，更是验证方法论的成功——产品、价格、品牌定位得到了真实市场的检验。</p>
-        </div>
-      </div>
+    <div class="h-min">1 背景</div>
+  <p class="doc-p">2025年12月，Ashley周创立了SUKOON素循——首个以补充装为核心的香氛洗护家清品牌。</p>
+  <p class="doc-p">品牌以 “回归感知，生长秩序” 为理念，通过订阅制系统，在每个清洁节点提供更好的使用体验，减少日常决策负担。但理念再好，消费者是否买单，仍是未知数。</p>
 
-      <div class="phase p-mid">
-        <div class="ph-h"><span class="ph-ic">②</span><span class="ph-t">ENTER｜从验证到精准进入</span><span class="ph-en">把机会变成商业落地</span></div>
-        <ul class="ph-list">
-          <li><b>产品验证：</b>通过线下展会的真实销售数据，确认了核心 SKU、价格带和消费者偏好。</li>
-          <li><b>渠道拓展：</b>基于验证中积累的渠道反馈，成功拓展至<b>曼谷和香港</b>的线下渠道。</li>
-          <li><b>品牌认知：</b>在一次次与消费者面对面的交流中，品牌不仅卖出了产品，更建立了本地认知和信任。</li>
-        </ul>
-        <div class="figimg" style="margin:2px 22px 18px;">
-          <div class="gallery" style="margin-top:0;">
-            <img src="assets/sukoon-booth.jpg" alt="素循展位">
-            <img src="assets/sukoon-retail-sg.jpg" alt="新加坡零售陈列">
-            <img src="assets/sukoon-scentbar.jpg" alt="香气吧台陈列">
-            <img src="assets/sukoon-hk.jpg" alt="香港 Hopewell Mall 陈列">
-          </div>
-        </div>
-      </div>
+    <div class="h-min">2 发展路径拆解</div>
 
-      <div class="phase p-post">
-        <div class="ph-h"><span class="ph-ic">③</span><span class="ph-t">GROW｜进入之后，如何持续增长</span><span class="ph-en">增长三角闭环</span></div>
-        <ul class="ph-list">
-          <li>完成验证和初步进入后，策略升级为"<b>从被认识、被看见，到被记住、被复购</b>"的全链路增长体系，围绕<b>线下扩张、线上增长、产品升级</b>三个维度同步推进。</li>
-          <li><b>线下持续扩张渠道：</b>将已验证的线下模式系统化复制到更多市场——继新加坡首站验证成功后，已进入曼谷、香港的线下渠道，持续拓展东南亚零售网络。每一站均沿用"先线下验证 → 再本地化扎根"的成熟路径，以最小风险实现区域复制。</li>
-          <li><b>线上全面增长体系：</b>联动本地团队，从社交媒体种草、独立站转化闭环到精准 KOL / PR 联动，系统推进品牌的全域露出与增长转化。</li>
-          <li><b>产品升级与扩充：</b>已全面开始新产品线的研发与上市筹备——以已验证的用户洞察和市场反馈为依据，围绕用户未被满足的需求进行产品迭代与品类拓展，为下一阶段的增长储备新动能。</li>
-        </ul>
-      </div>
-    </div>
+    <div class="h-min2">2.1 VALIDATE｜先验证，再投入——7个月跑遍线下展会&amp;售卖空间</div>
+  <p class="doc-p">素循没有选择一上来就铺广告、投流量的“赌注式进入”。相反，创始人Ashley做了一个反直觉的决定：前7个月全部投入线下验证。</p>
+    <p class="said">创始人：“品牌上市的时候，我突然丧失了表达的欲望——我非常想听到真实的反馈。”</p>
+    <div class="h-min2">为什么选择线下验证？</div>
+  <p class="doc-p">对新加坡市场的深刻洞察：新加坡电商数据中，品类前5名月销才六七千单，第3名开始断崖式跌到一两千——这样的体量养不活一个新品牌。与其在线上烧钱抢存量，不如在线下找到真实的消费者。</p>
+    <div class="h-min2">验证方法论：微表情就是数据库</div>
+  <p class="doc-p">在7个月的线下验证中，素循跑了7个展会、市集和售卖空间，采用了一套极其精细的验证方法：</p>
+    <ul class="plain-list">
+      <li>观察用户路过展位时的微表情——什么让他停下来？</li>
+      <li>闻到味道的第一反应——香气是否打动他？</li>
+      <li>哪句话引起了兴趣——什么卖点真正有效？</li>
+      <li>对价格的第一反应——定价是否在心理账户内？</li>
+    </ul>
+    <p class="said">创始人：“重复上百上千遍验证，防止founder bias。”</p>
+  <p class="doc-p">每一次验证都在回答一个核心问题：新加坡本地消费者真的会买单吗？</p>
+    <div class="h-min2">验证结果：数据说话</div>
+  <p class="doc-p">在曼谷国际品牌售卖会，素循作为全场最年轻的品牌 ，成为唯一全售空的品牌。这不仅是销售数字的胜利，更是验证方法论的成功——产品、价格、品牌定位得到了真实市场的检验。</p>
 
-    <div class="subh">创始人说：为什么"先验证"是对的</div>
-    <div class="quote">
-      <p>"品牌上市的时候，我突然丧失了表达的欲望——我非常想听到<u>真实的反馈</u>。"<br>
-      "重复上百上千遍验证，防止 founder bias。"</p>
-      <div class="who">—— 素循 SUKOON 创始人 Ashley</div>
-    </div>
-    <div class="fnotes">
-      <div class="fn"><h4>进入当地消费场域</h4><p>让我感受最深的是：很多事情<b>只有真正来到线下，才会发生</b>。</p></div>
-      <div class="fn"><h4>与消费者</h4><p>面对面交流之后，我们第一次很直接地感受到，他们为什么喜欢产品、会被什么细节打动，以及真实的购买反馈。</p></div>
-      <div class="fn"><h4>与本地机会</h4><p>很多后续的合作机会，是在现场一次次交流、认识和链接中自然发生的。尤其是在和当地消费者、PR 以及合作伙伴接触之后会明显发现，原本陌生的市场，也会因为一次真实的见面迅速拉近距离。</p></div>
-      <div class="fn"><h4>本地市场反馈</h4><p>3 天半的展卖里，我们<b>两次卖空库存</b>；更意外的是，在展卖还没有结束时，就已经出现了回购和复购，约占总订单量的 <b>10%</b>。</p></div>
-    </div>
-    <p class="lead closing-note">这次经历也让我重新理解了做品牌这件事。很幸运的是，我们只是通过一个产品，就有机会进入很多人的生活，并链接到一个个非常私人、真实的情感瞬间。</p>
+    <div class="h-min2">2.2 ENTER｜从验证到精准进入——把机会变成商业落地</div>
+  <p class="doc-p">验证跑通后，素循没有盲目扩张，而是基于验证结果精准进入：</p>
+    <ul class="plain-list">
+      <li>产品验证：通过线下展会的真实销售数据，确认了核心SKU、价格带和消费者偏好。</li>
+      <li>渠道拓展：基于验证中积累的渠道反馈，素循成功拓展至曼谷和香港的线下渠道。</li>
+      <li>品牌认知：在一次次与消费者面对面的交流中，品牌不仅卖出了产品，更建立了本地认知和信任。</li>
+    </ul>
 
-    <div class="subh">GMA 如何助力素循的出海路径</div>
-    <div class="cmp-scroll">
-      <table class="cmp">
-        <thead><tr>
-          <th style="width:150px;">阶段</th><th>素循做了什么</th><th>GMA 的服务对应</th>
-        </tr></thead>
+    <div class="h-min2">2.3 GROW｜进入之后，如何持续增长？</div>
+  <p class="doc-p">完成验证和初步进入后，素循进入持续增长阶段，策略升级为 “从被认识、被看见，到被记住、被复购” 的全链路增长体系。围绕 线下扩张、线上增长、产品升级 三个维度同步推进，形成“增长三角”闭环。</p>
+    <div class="h-min2">线下持续扩张渠道</div>
+  <p class="doc-p">将已验证的线下模式系统化复制到更多市场——继新加坡首站验证成功后，素循已成功进入曼谷、香港的线下渠道，持续拓展东南亚零售网络。每一站均沿用“先线下验证→再本地化扎根”的成熟路径，以最小风险实现区域复制。</p>
+    <div class="h-min2">线上全面增长体系</div>
+  <p class="doc-p">在完成线下渠道的初步拓展后，素循开始将增长重心转向线上，联动本地团队，从社交媒体种草、独立站转化闭环到精准KOL/PR联动，系统推进品牌的全域露出与增长转化。</p>
+    <div class="h-min2">产品升级与扩充</div>
+  <p class="doc-p">素循现已全面开始新产品线的研发与上市筹备——以已验证的用户洞察和市场反馈为依据，围绕用户未被满足的需求进行产品迭代与品类拓展，持续丰富品牌产品矩阵，为下一阶段的增长储备新动能。</p>
+
+    <div class="h-min">05 创始人说：为什么“先验证”是对的</div>
+
+    <div class="h-min">3. GMA如何助力素循的出海路径</div>
+    <div class="tbl-scroll">
+      <table class="doc-tbl">
+        <thead><tr><th>阶段</th><th>素循做了什么</th><th>GMA的服务对应</th></tr></thead>
         <tbody>
-          <tr class="w1c"><th>VALIDATE<br>市场验证</th><td>跑遍 7 个展会，验证产品、价格、消费者</td><td>真实消费场景测试、<b>消费者 × 商业端双线验证</b></td></tr>
-          <tr class="w2c"><th>ENTER<br>精准进入</th><td>基于验证结果拓展曼谷、香港渠道</td><td>渠道匹配、买手对接、商业合作落地</td></tr>
-          <tr class="w3c"><th>GROW<br>本地增长</th><td>订阅制系统、AI 驱动的轻量化运营</td><td>本地营销、渠道增长、降本增效</td></tr>
+          <tr><th>VALIDATE 市场验证</th><td>跑遍7个展会，验证产品、价格、消费者</td><td>真实消费场景测试、消费者×商业端双线验证</td></tr>
+          <tr><th>ENTER 精准进入</th><td>基于验证结果拓展曼谷、香港渠道</td><td>渠道匹配、买手对接、商业合作落地</td></tr>
+          <tr><th>GROW 本地增长</th><td>订阅制系统、AI驱动的轻量化运营</td><td>本地营销、渠道增长、降本增效</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="punch" style="margin-top:16px;">素循的核心启示：在不确定的市场中，<b>先用最小成本验证</b>，拿到真实销售数据与反馈，再决定增长策略——这正是 GMA 始终倡导的出海理念。</div>
+  <p class="doc-p">素循的核心启示：在不确定的市场中，先用最小成本验证，拿到真实销售数据与反馈，再决定增长策略——这正是GMA始终倡导的出海理念。</p>
 
-    <div class="subh">数据亮点</div>
-    <dl class="facts">
-      <div><dt>上市时间</dt><dd>2025 年 12 月</dd></div>
-      <div><dt>线下验证周期</dt><dd>7 个月</dd></div>
-      <div><dt>验证场次</dt><dd>近 <b>10</b> 个展会和售卖空间</dd></div>
-      <div><dt>曼谷成绩</dt><dd>全场最年轻品牌，<b>唯一全售空</b></dd></div>
-      <div><dt>复购表现</dt><dd>展卖期间即出现回购，约占总订单量 <b>10%</b></dd></div>
-      <div><dt>已拓展市场</dt><dd>除新加坡外，<b>曼谷、香港</b>已建立线下渠道</dd></div>
-    </dl>
-
-    <div class="gallery tall">
-      <img src="assets/sukoon-guest.jpg" alt="新加坡本地嘉宾到访">
-      <img src="assets/sukoon-ugc.jpg" alt="用户自发内容反馈">
-      <img src="assets/sukoon-store.jpg" alt="本地店铺渠道">
-      <img src="assets/sukoon-display.jpg" alt="门店陈列">
+    <div class="h-min">数据亮点</div>
+    <div class="tbl-scroll">
+      <table class="doc-tbl kv2">
+        <thead><tr><th>指标</th><th>数据</th></tr></thead>
+        <tbody>
+          <tr><th>上市时间</th><td>2025年12月</td></tr>
+          <tr><th>线下验证周期</th><td>7个月</td></tr>
+          <tr><th>验证场次</th><td>近10个展会和售卖空间</td></tr>
+          <tr><th>曼谷成绩</th><td>全场最年轻品牌，唯一全售空</td></tr>
+          <tr><th>复购表现</th><td>展卖期间即出现回购，约占总订单量10%</td></tr>
+          <tr><th>已拓展市场</th><td>除新加坡外，曼谷、香港已建立线下渠道</td></tr>
+        </tbody>
+      </table>
     </div>
-  </section>
-
-<!-- ════════════════════════ 06 总结 ════════════════════════ -->
-  <section class="section" id="closing">
-    <div class="sec-kicker"><span class="sec-no">06</span><span class="ln"></span><span class="en-tag">Closing</span></div>
-    <h2>我们相信的<em>合作方式</em></h2>
-    <p class="lead">GMA 汇聚中国侧与新加坡本地的实践经验、行业网络与落地资源，共同构建一套真正服务于中国品牌海外发展的支持系统。</p>
-    <p class="lead">我们相信，<span class="hl">好的连接不只是资源的叠加，而是理解、判断与持续协作的结果</span>。无论您处于市场验证、落地进入，还是寻求长期增长的阶段，GMA 都愿意成为可靠的同行者。</p>
-    <div class="invite">期待与更多有志于真实出海的品牌与团队相遇，共同开启下一站市场。</div>
   </section>
 
   <section class="cta">
     <h2>无论你在出海的哪一个阶段</h2><h2><em>We Are Ready to Help</em></h2>
-    <p>只要有想法，就值得一次深度对话。不论你是企业主还是品牌创始人，欢迎与我们联系，聊聊你的品牌，以及如何用更低风险的方式，拿到属于你的海外答案。</p>
-
     <div class="book-tt">📩 与我们联系｜Get in Touch</div>
     <div class="qr-note">微信扫码添加（添加时请备注 <b>【品牌名 + 目标市场】</b>）：</div>
     <div class="qrs">
